@@ -1,0 +1,20 @@
+classy 
+
+<div class="row home_journal_description" style="border: 1px dashed #c7c70b; padding: 10px;">
+<div class="col-12 about_journal " style="border: 1px dashed #c7500b padding: 10px;">
+<div class="header animate__animated animate__fadeInUp" style="font-weight: bold; font-size: 1.5em; height: 40px;">About Journal</div>
+<strong>Lorem Ipsum</strong> is simply dummied text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+<div class="col-3" style="float: left; margin-right: 10px; margin-top: 20px;"><img style="width: 170px;" src="http://localhost/openjournal/public/site/images/rizqiamalia/book.png" /></div>
+<div class="col-9 journal_details" style="float: left; margin-right: 10px; margin-top: 20px; border: 1px dashed #c7500b; padding: 10px;">
+<p>ISSN: 4567-8654 (Print)</p>
+<p>ISSN: 1234-5678 (Online)</p>
+<p>Distribution : Open Access</p>
+<p>Frequency: Published at the beginning of each month online and has a total of 12 printed editions per year. Published by: by Openjournaltheme.com</p>
+<ul>
+<li class="show"><a href="https://demo.openjournaltheme.com/classy/authorguidelines">Author Guidelines</a></li>
+<li class="show"><a href="https://demo.openjournaltheme.com/classy/about/submissions">Submit Paper Now! </a></li>
+</ul>
+<p><a href="https://demo.openjournaltheme.com/classy/journalrank"><img src="https://demo.openjournaltheme.com/public/site/images/demo_ojs_red_modern/journal-rank-13.png" /> <img src="https://demo.openjournaltheme.com/public/site/images/demo_ojs_red_modern/journal-rank-21.png" /></a></p>
+</div>
+</div>
+
