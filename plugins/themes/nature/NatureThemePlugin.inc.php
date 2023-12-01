@@ -191,6 +191,9 @@ class NatureThemePlugin extends ThemePlugin
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+
+		// Add tailwindcss
+		$this->addstyle('tailwind', '/public/css/style.css');
 	}
 
 	/**

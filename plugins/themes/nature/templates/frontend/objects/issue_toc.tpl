@@ -17,80 +17,81 @@
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  * @uses $heading string HTML heading element, default: h2
  *}
-{if !$heading}
-	{assign var="heading" value="h2"}
-{/if}
-{assign var="articleHeading" value="h3"}
-{if $heading == "h3"}
-	{assign var="articleHeading" value="h4"}
-{elseif $heading == "h4"}
-	{assign var="articleHeading" value="h5"}
-{elseif $heading == "h5"}
-	{assign var="articleHeading" value="h6"}
-{/if}
-<div class="obj_issue_toc">
 
-	{* Indicate if this is only a preview *}
-	{if !$issue->getPublished()}
-		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
+	{if !$heading}
+		{assign var="heading" value="h2"}
 	{/if}
+	{assign var="articleHeading" value="h3"}
+	{if $heading == "h3"}
+		{assign var="articleHeading" value="h4"}
+	{elseif $heading == "h4"}
+		{assign var="articleHeading" value="h5"}
+	{elseif $heading == "h5"}
+		{assign var="articleHeading" value="h6"}
+	{/if}
+	<div class="obj_issue_toc">
 
-	{* Issue introduction area above articles *}
-	<div class="heading">
-
-		{* Issue cover image *}
-		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
-		{if $issueCover}
-			<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
-				{capture assign="defaultAltText"}
-					{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
-				{/capture}
-				<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}">
-			</a>
+		{* Indicate if this is only a preview *}
+		{if !$issue->getPublished()}
+			{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 		{/if}
 
-		{* Description *}
-		{if $issue->hasDescription()}
-			<div class="description">
-				{$issue->getLocalizedDescription()|strip_unsafe_html}
-			</div>
-		{/if}
+		{* Issue introduction area above articles *}
+		<div class="heading">
 
-		{* PUb IDs (eg - DOI) *}
-		{foreach from=$pubIdPlugins item=pubIdPlugin}
-			{assign var=pubId value=$issue->getStoredPubId($pubIdPlugin->getPubIdType())}
-			{if $pubId}
-				{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-				<div class="pub_id {$pubIdPlugin->getPubIdType()|escape}">
-					<span class="type">
-						{$pubIdPlugin->getPubIdDisplayType()|escape}:
+			{* Issue cover image *}
+			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+			{if $issueCover}
+				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
+					{capture assign="defaultAltText"}
+						{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
+					{/capture}
+					<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}">
+				</a>
+			{/if}
+
+			{* Description *}
+			{if $issue->hasDescription()}
+				<div class="description">
+					{$issue->getLocalizedDescription()|strip_unsafe_html}
+				</div>
+			{/if}
+
+			{* PUb IDs (eg - DOI) *}
+			{foreach from=$pubIdPlugins item=pubIdPlugin}
+				{assign var=pubId value=$issue->getStoredPubId($pubIdPlugin->getPubIdType())}
+				{if $pubId}
+					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
+					<div class="pub_id {$pubIdPlugin->getPubIdType()|escape}">
+						<span class="type">
+							{$pubIdPlugin->getPubIdDisplayType()|escape}:
+						</span>
+						<span class="id">
+							{if $doiUrl}
+								<a href="{$doiUrl|escape}">
+									{$doiUrl}
+								</a>
+							{else}
+								{$pubId}
+							{/if}
+						</span>
+					</div>
+				{/if}
+			{/foreach}
+
+			{* Published date *}
+			{if $issue->getDatePublished()}
+				<div class="published">
+					<span class="label">
+						{translate key="submissions.published"}:
 					</span>
-					<span class="id">
-						{if $doiUrl}
-							<a href="{$doiUrl|escape}">
-								{$doiUrl}
-							</a>
-						{else}
-							{$pubId}
-						{/if}
+					<span class="value">
+						{$issue->getDatePublished()|date_format:$dateFormatShort}
 					</span>
 				</div>
 			{/if}
-		{/foreach}
-
-		{* Published date *}
-		{if $issue->getDatePublished()}
-			<div class="published">
-				<span class="label">
-					{translate key="submissions.published"}:
-				</span>
-				<span class="value">
-					{$issue->getDatePublished()|date_format:$dateFormatShort}
-				</span>
-			</div>
-		{/if}
-	</div>
-
+		</div>
+		
 	{* Full-issue galleys *}
 	{if $issueGalleys}
 		<div class="galleys">
