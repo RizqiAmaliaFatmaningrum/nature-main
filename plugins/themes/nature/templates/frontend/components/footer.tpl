@@ -18,7 +18,7 @@
 {if empty($isFullWidth)}
 	{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 	{if $sidebarCode}
-		<div class="pkp_structure_sidebar left" role="complementary"
+		<div class="pkp_structure_sidebar right" role="complementary"
 			aria-label="{translate|escape key="common.navigation.sidebar"}">
 			{$sidebarCode}
 		</div><!-- pkp_sidebar.left -->
@@ -28,7 +28,7 @@
 
 <div class="pkp_structure_footer_wrapper" role="contentinfo">
 	<a id="pkp_content_footer"></a>
-
+	<div class="bg-[#00504F] text-white">
 	<div class="pkp_structure_footer">
 
 		{if $pageFooter}
@@ -42,6 +42,7 @@
 				<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
 			</a>
 		</div>
+	</div>
 	</div>
 </div><!-- pkp_structure_footer_wrapper -->
 
