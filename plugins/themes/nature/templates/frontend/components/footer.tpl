@@ -12,7 +12,7 @@
  *       sidebars have been configured for thesite.
  *}
 
-</div><!-- pkp_structure_main -->
+</main><!-- pkp_structure_main -->
 
 {* Sidebars *}
 {if empty($isFullWidth)}

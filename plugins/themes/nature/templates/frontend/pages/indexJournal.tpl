@@ -69,21 +69,42 @@
 	{/if}
 
 	{* Latest issue *}
-	{if $issue}
-		<section class="current_issue">
-			<a id="homepageIssue"></a>
-			<h2>
-				{translate key="journal.currentIssue"}
-			</h2>
-			<div class="current_issue_title">
-				{$issue->getIssueIdentification()|strip_unsafe_html}
-			</div>
-			{include file="frontend/objects/issue_toc.tpl" heading="h3"}
-			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
-				{translate key="journal.viewAllIssues"}
-			</a>
-		</section>
-	{/if}
+	<div class="flex">
+		<div class="flex bg-[#00504F] text-white rounded-3xl p-4 m-2">
+			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+			{if $issueCover}
+				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
+					{capture assign="defaultAltText"}
+						{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
+					{/capture}
+					<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}" class="w-64 h-auto rounded-3xl">
+				</a>
+			{/if}
+		</div>
+		<div class="flex bg-[#00504F] text-white rounded-3xl p-4 m-2">
+			{if $issue}
+				<section class="current_issue">
+					<a id="homepageIssue"></a>
+					<h2 class="m-0">
+						{translate key="journal.currentIssue"}
+					</h2>
+					<div class="current_issue_title">
+						{$issue->getIssueIdentification()|strip_unsafe_html}
+					</div>
+					{* {if $issue->hasDescription()}
+						<div class="description">
+							{$issue->getLocalizedDescription()|strip_unsafe_html}
+						</div>
+					{/if} *}
+				</section>
+			{/if}
+		</div>
+	</div>
+	{* Show issue toc *}
+	{include file="frontend/objects/issue_toc.tpl" heading="h3"}
+		<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
+			{translate key="journal.viewAllIssues"}
+		</a>
 
 	{* Additional Homepage Content *}
 	{if $additionalHomeContent}
