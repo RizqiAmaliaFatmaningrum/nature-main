@@ -17,6 +17,7 @@
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  * @uses $heading string HTML heading element, default: h2
  *}
+
 {if !$heading}
 	{assign var="heading" value="h2"}
 {/if}
@@ -28,7 +29,8 @@
 {elseif $heading == "h5"}
 	{assign var="articleHeading" value="h6"}
 {/if}
-<div class="obj_issue_toc">
+
+<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
 
 	{* Indicate if this is only a preview *}
 	{if !$issue->getPublished()}
@@ -39,7 +41,7 @@
 	<div class="heading">
 
 		{* Issue cover image *}
-		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+		{* {assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 		{if $issueCover}
 			<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
 				{capture assign="defaultAltText"}
@@ -47,7 +49,7 @@
 				{/capture}
 				<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}">
 			</a>
-		{/if}
+		{/if} *}
 
 		{* Description *}
 		{if $issue->hasDescription()}
