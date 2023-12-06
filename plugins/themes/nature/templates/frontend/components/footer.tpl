@@ -18,7 +18,7 @@
 {if empty($isFullWidth)}
 	{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 	{if $sidebarCode}
-		<div class="pkp_structure_sidebar right" role="complementary"
+		<div class="pkp_structure_sidebar right bg-[#F4FEFD]" role="complementary"
 			aria-label="{translate|escape key="common.navigation.sidebar"}">
 			{$sidebarCode}
 		</div><!-- pkp_sidebar.left -->

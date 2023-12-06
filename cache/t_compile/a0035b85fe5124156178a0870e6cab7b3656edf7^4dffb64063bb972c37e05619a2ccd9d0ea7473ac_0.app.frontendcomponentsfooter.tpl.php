@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-28 09:28:12
+/* Smarty version 4.3.1, created on 2023-12-04 01:08:50
   from 'app:frontendcomponentsfooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6565a49c306524_07333809',
+  'unifunc' => 'content_656d1892636948_92082226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dffb64063bb972c37e05619a2ccd9d0ea7473ac' => 
     array (
       0 => 'app:frontendcomponentsfooter.tpl',
-      1 => 1701154828,
+      1 => 1701504197,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6565a49c306524_07333809 (Smarty_Internal_Template $_smarty_tpl) {
+function content_656d1892636948_92082226 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 </div><!-- pkp_structure_main -->
 
@@ -29,7 +29,7 @@ function content_6565a49c306524_07333809 (Smarty_Internal_Template $_smarty_tpl)
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['call_hook'][0], array( array('name'=>"Templates::Common::Sidebar"),$_smarty_tpl ) );
 $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 	<?php if ($_smarty_tpl->tpl_vars['sidebarCode']->value) {?>
-		<div class="pkp_structure_sidebar left" role="complementary"
+		<div class="pkp_structure_sidebar right" role="complementary"
 			aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.sidebar"),$_smarty_tpl ) ) ));?>
 ">
 			<?php echo $_smarty_tpl->tpl_vars['sidebarCode']->value;?>
@@ -41,7 +41,7 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 
 <div class="pkp_structure_footer_wrapper" role="contentinfo">
 	<a id="pkp_content_footer"></a>
-
+	<div class="bg-[#00504F] text-white">
 	<div class="pkp_structure_footer">
 
 		<?php if ($_smarty_tpl->tpl_vars['pageFooter']->value) {?>
@@ -60,6 +60,7 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 ">
 			</a>
 		</div>
+	</div>
 	</div>
 </div><!-- pkp_structure_footer_wrapper -->
 

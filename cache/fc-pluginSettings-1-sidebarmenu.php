@@ -2,7 +2,7 @@
   'blockContent' => 
   array (
     'en_US' => '<p><span class="title">Journal Menu</span></p>
-<p class="menu_item"><a href="https://demo.openjournaltheme.com/index.php/jcb/exm" target="_blank" rel="noopener"><em class="fa fa-circle-o">&nbsp;</em>Focus &amp; scopes</a></p>
+<p class="menu_item"><a href="https://demo.openjournaltheme.com/index.php/jcb/exm" target="_blank" rel="noopener"><em class="fa fa-circle-o"> &nbsp;Focus &amp; scopes</em></a></p>
 <p class="menu_item"><a href="https://demo.openjournaltheme.com/index.php/jcb/exm" target="_blank" rel="noopener"><em class="fa fa-pencil-square-o">&nbsp;</em>Submission</a></p>
 <p class="menu_item"><a href="https://demo.openjournaltheme.com/index.php/jcb/exm" target="_blank" rel="noopener"><em class="fa fa-file-text-o">&nbsp;</em>Manuscript template</a></p>
 <p class="menu_item"><a href="https://demo.openjournaltheme.com/index.php/jcb/exm" target="_blank" rel="noopener"><em class="fa fa-clone">&nbsp;</em>Publication ethics</a></p>

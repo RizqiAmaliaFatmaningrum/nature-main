@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-29 10:00:34
+/* Smarty version 4.3.1, created on 2023-12-05 03:55:08
   from 'app:frontendcomponentsfooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6566fdb2bf0f80_51927897',
+  'unifunc' => 'content_656e910c50ce77_83877324',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dffb64063bb972c37e05619a2ccd9d0ea7473ac' => 
     array (
       0 => 'app:frontendcomponentsfooter.tpl',
-      1 => 1701248406,
+      1 => 1701744903,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6566fdb2bf0f80_51927897 (Smarty_Internal_Template $_smarty_tpl) {
+function content_656e910c50ce77_83877324 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 </div><!-- pkp_structure_main -->
 
@@ -29,7 +29,7 @@ function content_6566fdb2bf0f80_51927897 (Smarty_Internal_Template $_smarty_tpl)
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['call_hook'][0], array( array('name'=>"Templates::Common::Sidebar"),$_smarty_tpl ) );
 $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 	<?php if ($_smarty_tpl->tpl_vars['sidebarCode']->value) {?>
-		<div class="pkp_structure_sidebar right" role="complementary"
+		<div class="pkp_structure_sidebar right bg-[#F4FEFD]" role="complementary"
 			aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.sidebar"),$_smarty_tpl ) ) ));?>
 ">
 			<?php echo $_smarty_tpl->tpl_vars['sidebarCode']->value;?>

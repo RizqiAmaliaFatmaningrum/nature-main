@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-29 10:00:33
+/* Smarty version 4.3.1, created on 2023-12-06 07:52:33
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6566fdb1758f72_44771746',
+  'unifunc' => 'content_65701a317a3c59_31041802',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701247482,
+      1 => 1701845549,
       2 => 'app',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/skipLinks.tpl' => 1,
   ),
 ),false)) {
-function content_6566fdb1758f72_44771746 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_65701a317a3c59_31041802 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
 $_smarty_tpl->_assignInScope('showingLogo', false);
@@ -131,17 +131,28 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 				
 										<div class="container mx-auto">
 					<div class="bg-[#00504F] text-white p-10">
+					<img src="images/gambar.jpg">
 					<h3 class="text-3xl font-bold">About Jurnal</h3>
 						<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
 					</div>
 				</div>
+				
+														
+														 <div class="flex-initial w-64 p-4 m-2">
+								<div class="h-auto items-center justify-between md:8/12 bg-[#DAE4E3] rounded-2xl">
+									<section class="flex">
+										<input type="text" class="w-full h-10 font-medium ml-2 focus:outline-none bg-transparent" placeholder="Search...">
+										<a href="http://localhost/nature-main1/index.php/MS/search" class="w-10 h-10 bg-[#00504F] flex justify-center item-center rounded-2xl p-3"><em class="fa fa-search" style="margin-right: -3px;"></em></a>
+									</section>
+								</div>
+							</div>
+						
 				<?php if ($_smarty_tpl->tpl_vars['isFullWidth']->value) {?>
 			<?php $_smarty_tpl->_assignInScope('hasSidebar', 0);?>
 		<?php }?>
 		<div class="pkp_structure_content<?php if ($_smarty_tpl->tpl_vars['hasSidebar']->value) {?> has_sidebar<?php }?>">
-			<aside id="left" class="col-md-3">  </aside>
-				<div class="pkp_structure_main" role="main">
-					<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-6">
-
+			<div class="pkp_structure_left col-xs-12">  </div>
+				<div class="pkp_structure_main col-xs-12 col-md-6 col-sm-10 bg-[#DAE4E3] rounded-t-lg" role="main">
+					
 <?php }
 }

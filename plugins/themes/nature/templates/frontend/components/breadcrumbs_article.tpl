@@ -16,7 +16,7 @@
  *}
 
 <nav class="cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol>
+	<ol class="rounded-2xl bg-[#006A6829] text-teal-800 font-bold">
 		<li>
 			<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
 				{translate key="common.homepageNavigationLabel"}
@@ -24,6 +24,7 @@
 			<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
 		</li>
 		<li>
+		
 			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">
 				{translate key="navigation.archives"}
 			</a>
@@ -37,8 +38,8 @@
 				<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
 			</li>
 		{/if}
-		<li class="current" aria-current="page">
-			<span aria-current="page">
+		<li class="current rounded-r-2xl bg-[#006A68]" aria-current="page">
+			<span aria-current="page" class="text-white mx-3">
 				{if $currentTitleKey}
 					{translate key=$currentTitleKey}
 				{else}

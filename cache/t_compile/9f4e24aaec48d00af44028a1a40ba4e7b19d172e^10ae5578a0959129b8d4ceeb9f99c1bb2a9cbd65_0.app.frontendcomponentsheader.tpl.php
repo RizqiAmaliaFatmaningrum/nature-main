@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-01 02:05:06
+/* Smarty version 4.3.1, created on 2023-12-06 07:52:37
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65693142632895_43822494',
+  'unifunc' => 'content_65701a35d3a8b6_52533664',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701392693,
+      1 => 1701845549,
       2 => 'app',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/skipLinks.tpl' => 1,
   ),
 ),false)) {
-function content_65693142632895_43822494 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_65701a35d3a8b6_52533664 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
 $_smarty_tpl->_assignInScope('showingLogo', false);
@@ -130,47 +130,29 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 		</header><!-- .pkp_structure_head -->
 				
 										<div class="container mx-auto">
-					<div class="bg-primary1 text-white p-10">
+					<div class="bg-[#00504F] text-white p-10">
 					<img src="images/gambar.jpg">
 					<h3 class="text-3xl font-bold">About Jurnal</h3>
 						<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
 					</div>
 				</div>
-				<div class="container mx-auto bg-primary3">
-					<div class="border rounded-t-3xl p-10">
-						<div class="flex">
-
-														<div class="flex-2 p-4 m-2">
-								<div class="w-30 h-20 bg-primary2 rounded-2xl flex p-4 m-2">
-									<p class="text-lg m-auto color-primary1 font-bold">Sumbit Your Paper</p>
-										<div class="w-10 h-10 bg-primary1 rounded-full flex ">
-											<button href="#" class="text-lg m-auto">➕</button>
-										</div>
-								</div>
-							</div>
-
-							<div class="flex-1 bg-primary2 p-4 m-2 rounded-2xl">
-								<p>current issues</p>
-							</div>
-
-														<div class="flex-initial w-64 p-4 m-2">
-								<div class="h-auto items-center justify-between md:8/12 bg-primary2 rounded-2xl">
+				
+														
+														 <div class="flex-initial w-64 p-4 m-2">
+								<div class="h-auto items-center justify-between md:8/12 bg-[#DAE4E3] rounded-2xl">
 									<section class="flex">
 										<input type="text" class="w-full h-10 font-medium ml-2 focus:outline-none bg-transparent" placeholder="Search...">
-										<button class="w-10 h-10 bg-primary1 flex justify-center item-center rounded-2xl ml-auto">🔍</button>
+										<a href="http://localhost/nature-main1/index.php/MS/search" class="w-10 h-10 bg-[#00504F] flex justify-center item-center rounded-2xl p-3"><em class="fa fa-search" style="margin-right: -3px;"></em></a>
 									</section>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-
+						
 				<?php if ($_smarty_tpl->tpl_vars['isFullWidth']->value) {?>
 			<?php $_smarty_tpl->_assignInScope('hasSidebar', 0);?>
 		<?php }?>
 		<div class="pkp_structure_content<?php if ($_smarty_tpl->tpl_vars['hasSidebar']->value) {?> has_sidebar<?php }?>">
 			<div class="pkp_structure_left col-xs-12">  </div>
-				<div class="pkp_structure_main col-xs-12 col-sm-10 col-md-6" role="main">
+				<div class="pkp_structure_main col-xs-12 col-md-6 col-sm-10 bg-[#DAE4E3] rounded-t-lg" role="main">
 					
 <?php }
 }

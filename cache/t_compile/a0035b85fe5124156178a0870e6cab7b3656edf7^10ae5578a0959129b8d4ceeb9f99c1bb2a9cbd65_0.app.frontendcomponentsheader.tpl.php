@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-28 09:28:11
+/* Smarty version 4.3.1, created on 2023-12-04 01:26:26
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6565a49bc20d57_01256818',
+  'unifunc' => 'content_656d1cb26cace7_24218752',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701156659,
+      1 => 1701649579,
       2 => 'app',
     ),
   ),
@@ -22,11 +22,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/skipLinks.tpl' => 1,
   ),
 ),false)) {
-function content_6565a49bc20d57_01256818 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
-?>
- <link href="/public/css/style.css" rel="stylesheet">
-<?php $_smarty_tpl->_assignInScope('showingLogo', true);
+function content_656d1cb26cace7_24218752 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+$_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
 $_smarty_tpl->_assignInScope('showingLogo', false);
 }?>
@@ -46,7 +44,6 @@ $_smarty_tpl->_subTemplateRender("app:frontend/components/headerHead.tpl", $_sma
 if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" dir="<?php echo (($tmp = call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['currentLocaleLangDir']->value )) ?? null)===null||$tmp==='' ? "ltr" ?? null : $tmp);?>
 ">
 	<div class="pkp_structure_page">
-<h3 class="text-5xl text-bold">aisyah</h3>
 				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
 						<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/skipLinks.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -98,14 +95,13 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 					<?php }?>
 					</div>
 				</div>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "primaryMenu", null);?>
+								<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "primaryMenu", null);?>
 					<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['load_menu'][0], array( array('name'=>"primary",'id'=>"navigationPrimary",'ulClass'=>"pkp_navigation_primary"),$_smarty_tpl ) );?>
 
 				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
-
 				<nav class="pkp_site_nav_menu" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.site"),$_smarty_tpl ) ) ));?>
 ">
+
 					<a id="siteNav"></a>
 					<div class="pkp_navigation_primary_row">
 						<div class="pkp_navigation_primary_wrapper">
@@ -130,13 +126,51 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 					</div>
 				</nav>
 			</div><!-- .pkp_head_wrapper -->
+
 		</header><!-- .pkp_structure_head -->
+				
+										<div class="container mx-auto">
+					<div class="bg-[#00504F] text-white p-10">
+					<img src="images/gambar.jpg">
+					<h3 class="text-3xl font-bold">About Jurnal</h3>
+						<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
+					</div>
+				</div>
+				<div class="container mx-auto bg-[#F4FEFD]">
+					<div class="border rounded-t-3xl p-10">
+						<div class="flex">
+
+														<div class="flex-2 p-4 m-2">
+								<div class="w-30 h-20 bg-[#DAE4E3] rounded-2xl flex p-4 m-2">
+									<p class="text-lg m-auto color-[#00504F] font-bold">Sumbit Your Paper</p>
+										<div class="w-10 h-10 bg-[#00504F] rounded-full flex ">
+											<button href="#" class="text-lg m-auto">➕</button>
+										</div>
+								</div>
+							</div>
+
+							<div class="flex-1 bg-[#DAE4E3] p-4 m-2 rounded-2xl">
+								<p>current issues</p>
+							</div>
+
+														<div class="flex-initial w-64 p-4 m-2">
+								<div class="h-auto items-center justify-between md:8/12 bg-[#DAE4E3] rounded-2xl">
+									<section class="flex">
+										<input type="text" class="w-full h-10 font-medium ml-2 focus:outline-none bg-transparent" placeholder="Search...">
+										<button class="w-10 h-10 bg-[#00504F] flex justify-center item-center rounded-2xl ml-auto">🔍</button>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<?php if ($_smarty_tpl->tpl_vars['isFullWidth']->value) {?>
 			<?php $_smarty_tpl->_assignInScope('hasSidebar', 0);?>
 		<?php }?>
 		<div class="pkp_structure_content<?php if ($_smarty_tpl->tpl_vars['hasSidebar']->value) {?> has_sidebar<?php }?>">
-			<div class="pkp_structure_main" role="main">
-				<a id="pkp_content_main"></a>
+			<div class="pkp_structure_left col-xs-12">  </div>
+				<div class="pkp_structure_main col-xs-12 col-sm-10 col-md-6" role="main">
+					
 <?php }
 }
