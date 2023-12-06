@@ -27,22 +27,17 @@
 {include file="frontend/components/headerHead.tpl"}
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 	<span class="hidden">Nature OJS 3 Theme by openjournaltheme.com theme</span>	
-	
-	
 	{* maintenance *}
 	{if $isMaintenanceMode}
 		<div id="maintenance_container">
 			<!-- Other elements here -->
 			<div id="maintenance_content" style="text-align:center; color: #DBB539; padding: 5px 0">
-				<i class="fa fa-wrench mr-3"> </i> <a href="https://openjournaltheme.com" style="color: #DBB539; padding: 5px 0"> Site is in maintenance mode</a>			
+				<i class="fa fa-wrench mr-3"> </i> <a href="https://openjournaltheme.com" style="color: #DBB539; padding: 5px 0">Site is in maintenance mode</a>			
 			</div>
 		</div>
 	{/if}
-		
-	
 
 	<div class="pkp_structure_page">
-
 	
 		{* Header *}
 		<header class="bg-white" id="headerNavigationContainer" role="banner">
@@ -61,6 +56,7 @@
 			{capture assign="homeUrl"}
 				{url page="index" router=$smarty.const.ROUTE_PAGE}
 			{/capture}
+			
 			<div class="container mx-auto">
 				{* <div class="flex items-center justify-between relative"> *}
 				<nav class="p-5 bg-[#F4FEFD] shadow flex items-center justify-between">
@@ -77,7 +73,7 @@
 
 					{if !empty(trim($primaryMenu)) || $currentContext}
 						<!-- Primary navigation menu for the current application -->
-						<div class="flex items-center">
+						<div class="flex items-center font-bold">
 						  {$primaryMenu}
 						  
 						  <!-- Search form -->
@@ -90,32 +86,33 @@
 					{/if}
 
 					<nav aria-label="{translate|escape key="common.navigation.user"}" class="md:col-12 pr-0" >
-							{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
+							<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl ml-4">
+								{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
+							</button>
 					</nav>
-		
 				</nav>
 				{* </div> *}
 			</div>	
-			
+
 			<div class="container mx-auto shadow bg-green">
 					{if $displayPageHeaderLogo}
 						<a href="{$homeUrl}" class="is_img">
 							<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} />
 						</a>
-					{* {elseif $displayPageHeaderTitle}
-						<a href="{$homeUrl}" class="is_text">{$displayPageHeaderTitle|escape}</a> *}
-					{* {else}
+					{elseif $displayPageHeaderTitle}
+						<a href="{$homeUrl}" class="is_text text-2xl text-center font-bold">{$displayPageHeaderTitle|escape}</a>
+					{else}
 						<a href="{$homeUrl}" class="is_img">
-							<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" width="180" height="90" />
-						</a> *}
+							<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="w-48 h-24 object-contain" />
+						</a>
 					{/if}
 
 					<div class="bg-[#00504F] text-white p-10 z-10">
 						<h3 class="text-3xl font-bold">About Jurnal</h3>
 							<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
 					</div>
-					<div class="bg-[#F4FEFD] ">
-						<div class=" rounded-t-2xl p-10">
+					{* <div class="bg-[#F4FEFD] ">
+						<div class=" rounded-3xl p-10">
 							<div class="flex">
 								<div class="w-30 h-20 bg-[#DAE4E3] rounded-3xl flex p-4 m-2">
 									<p class="text-lg m-auto color-[#00504F] font-bold">Sumbit Your Paper</p>
@@ -145,7 +142,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> *}
 
 
 			</div>
@@ -156,7 +153,7 @@
 			{* {include file="frontend/components/skipLinks.tpl"} *}
 
 			{* <div class="pkp_head_wrapper"> *}
-				<div class="pkp_site_name_wrapper">
+				{* <div class="pkp_site_name_wrapper">
 					<button class="pkp_site_nav_toggle">
 						<span>Open Menu</span>
 					</button>
@@ -170,7 +167,7 @@
 						</h1>
 					{/if}
 
-				</div>
+				</div> *}
 
 				
 			{* </div><!-- .pkp_head_wrapper --> *}
@@ -188,13 +185,53 @@
 							{/if}
 		</div>
 
+		{* <p class="flex space-x-6">
+			<a href="https://www.facebook.com/sharer.php?u=https://demo.openjournaltheme.com/index.php/novelty/"
+			target="_blank"
+			rel="noopener"
+			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
+				<em class="fa fa-facebook"></em>
+			</a>
+
+			<a href="https://telegram.me/share/url?url=https://demo.openjournaltheme.com/index.php/novelty/"
+			target="_blank"
+			rel="noopener"
+			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
+				<em class="fa fa-telegram"></em>
+			</a>
+
+			<a href="https://api.whatsapp.com/send?text=https://demo.openjournaltheme.com/index.php/novelty/"
+			target="_blank"
+			rel="noopener"
+			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
+				<em class="fa fa-whatsapp "></em>
+			</a>
+
+			<a href="https://twitter.com/intent/tweet?url=https://demo.openjournaltheme.com/index.php/novelty/"
+			target="_blank"
+			rel="noopener"
+			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
+				<em class="fa fa-twitter"></em>
+			</a>
+
+			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://demo.openjournaltheme.com/index.php/novelty/"
+			target="_blank"
+			rel="noopener"
+			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
+				<em class="fa fa-linkedin"></em>
+			</a>
+		</p> *}
+
 		{* Wrapper for page content and sidebars *}
 		{* {if $isFullWidth}
 			{assign var=hasSidebar value=0}
 		{/if} *}
 		<div class="bg-[#F4FEFD] pkp_structure_content container">
+
 			<aside id="left" class="col-md-3"> </aside>
 			<main class="pkp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
+
+			
 			
 
 					

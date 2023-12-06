@@ -70,7 +70,7 @@
 
 	{* Latest issue *}
 	<div class="flex">
-		<div class="flex bg-[#00504F] text-white rounded-3xl p-4 m-2">
+		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-4 m-2">
 			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 			{if $issueCover}
 				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
@@ -81,21 +81,46 @@
 				</a>
 			{/if}
 		</div>
-		<div class="flex bg-[#00504F] text-white rounded-3xl p-4 m-2">
+		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-4 m-2">
 			{if $issue}
 				<section class="current_issue">
 					<a id="homepageIssue"></a>
-					<h2 class="m-0">
+					<p class="font-bold text-2xl">
 						{translate key="journal.currentIssue"}
-					</h2>
+					</p>
 					<div class="current_issue_title">
 						{$issue->getIssueIdentification()|strip_unsafe_html}
 					</div>
-					{* {if $issue->hasDescription()}
-						<div class="description">
+
+					{* Description *}
+					{if $issue->hasDescription()}
+						<div class="description text-justify pb-6">
 							{$issue->getLocalizedDescription()|strip_unsafe_html}
 						</div>
-					{/if} *}
+					{/if}
+
+					{* Published date *}
+					{if $issue->getDatePublished()}
+						<div class="published">
+							{* <span class="label">
+								{translate key="submissions.published"}:
+							</span> *}
+							<button class="bg-[#006A68] text-[#FF8E06] font-bold py-2 px-4 rounded-3xl">
+								<span class="label">
+									{translate key="submissions.published"}:
+								</span>
+								<span class="value">
+									{$issue->getDatePublished()|date_format:$dateFormatShort}
+								</span>
+							</button>
+							<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl">
+								<a href="https://openjournaltheme.com/novelty-ojs3-theme" target="_blank" rel="noopener">Read More</a>
+							</button>
+							{* <span class="value">
+								{$issue->getDatePublished()|date_format:$dateFormatShort}
+							</span> *}
+						</div>
+					{/if}
 				</section>
 			{/if}
 		</div>
