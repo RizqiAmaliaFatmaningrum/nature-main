@@ -51,13 +51,6 @@
 			</a>
 		{/if} *}
 
-		{* Description *}
-		{if $issue->hasDescription()}
-			<div class="description">
-				{$issue->getLocalizedDescription()|strip_unsafe_html}
-			</div>
-		{/if}
-
 		{* PUb IDs (eg - DOI) *}
 		{foreach from=$pubIdPlugins item=pubIdPlugin}
 			{assign var=pubId value=$issue->getStoredPubId($pubIdPlugin->getPubIdType())}
@@ -81,7 +74,7 @@
 		{/foreach}
 
 		{* Published date *}
-		{if $issue->getDatePublished()}
+		{* {if $issue->getDatePublished()}
 			<div class="published">
 				<span class="label">
 					{translate key="submissions.published"}:
@@ -90,7 +83,7 @@
 					{$issue->getDatePublished()|date_format:$dateFormatShort}
 				</span>
 			</div>
-		{/if}
+		{/if} *}
 	</div>
 
 	{* Full-issue galleys *}
@@ -130,4 +123,7 @@
 		</div>
 	{/foreach}
 	</div><!-- .sections -->
+</div>
+
+<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
 </div>
