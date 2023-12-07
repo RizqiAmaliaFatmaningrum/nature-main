@@ -15,27 +15,31 @@
  *}
 
 <nav class="cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol class="rounded-2xl bg-[#006A6829] text-teal-800 font-bold">
-		<li>
-			<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
-				{translate key="common.homepageNavigationLabel"}
-			</a>
-			<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
-		</li>
-		<li>
-			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">
-				{translate key="navigation.archives"}
-			</a>
-			<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
-		</li>
-		<li class="current rounded-r-2xl bg-[#006A68]" aria-current="page">
-			<span aria-current="page" class="text-white mx-3">
-				{if $currentTitleKey}
-					{translate key=$currentTitleKey}
-				{else}
-					{$currentTitle|escape}
-				{/if}
-			</span>
-		</li>
+	<ol>
+		<div class="bg-[#006A6829] text-[#00504F] font-bold rounded-2xl h-10 p-2 relative">
+			<li>
+				<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
+					{translate key="common.homepageNavigationLabel"}
+				</a>
+				<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
+			</li>
+			<li>
+				<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">
+					{translate key="navigation.archives"}
+				</a>
+				<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
+			</li>
+			<li aria-current="page">
+				<div class="current bg-[#00504F] rounded-r-2xl h-10 p-2 absolute top-0">
+				<span aria-current="page" class="text-white whitespace-nowrap overflow-hidden">
+					{if $currentTitleKey}
+						{translate key=$currentTitleKey}
+					{else}
+						{$currentTitle|escape}
+					{/if}
+				</span>
+				</div>
+			</li>
+		</div>
 	</ol>
 </nav>

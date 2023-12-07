@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-06 08:35:54
+/* Smarty version 4.3.1, created on 2023-12-07 02:54:51
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6570245ad04b68_50614203',
+  'unifunc' => 'content_657125eb9ea662_42663773',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701845549,
+      1 => 1701913416,
       2 => 'app',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/skipLinks.tpl' => 1,
   ),
 ),false)) {
-function content_6570245ad04b68_50614203 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657125eb9ea662_42663773 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-06 04:45:59
+/* Smarty version 4.3.1, created on 2023-12-07 08:30:52
   from 'app:frontendobjectsarticle_details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656fee778eec70_11496792',
+  'unifunc' => 'content_657174ac7d1ea4_40589494',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'addd65021fadf964339ab08cd1aa93ba59b14e9c' => 
     array (
       0 => 'app:frontendobjectsarticle_details.tpl',
-      1 => 1701834358,
+      1 => 1701934248,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_656fee778eec70_11496792 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657174ac7d1ea4_40589494 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
     <?php if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
