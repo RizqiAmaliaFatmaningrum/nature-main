@@ -100,10 +100,14 @@ class NatureThemePlugin extends ThemePlugin
 				],
 			],
 			'default' => false,
+
+			
 		]);
 
 		// Load primary stylesheet
 		$this->addStyle('stylesheet', 'styles/index.less');
+		// $this->addScript('tailwind', 'https://cdn.tailwindcss.com',['baseUrl' => ""] );
+		
 
 		// Store additional LESS variables to process based on options
 		$additionalLessVariables = array();
@@ -191,6 +195,9 @@ class NatureThemePlugin extends ThemePlugin
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+		$this->addStyle('tailwind', '/public/css/style.css');
+
+		$this->addStyle('noveltyLess', 'styles/nature.less', ['baseUrl' => $this->_getBaseUrl()]);
 	}
 
 	/**

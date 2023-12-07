@@ -17,6 +17,7 @@
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  * @uses $heading string HTML heading element, default: h2
  *}
+
 {if !$heading}
 	{assign var="heading" value="h2"}
 {/if}
@@ -28,7 +29,8 @@
 {elseif $heading == "h5"}
 	{assign var="articleHeading" value="h6"}
 {/if}
-<div class="obj_issue_toc">
+
+<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
 
 	{* Indicate if this is only a preview *}
 	{if !$issue->getPublished()}
@@ -39,7 +41,7 @@
 	<div class="heading">
 
 		{* Issue cover image *}
-		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+		{* {assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 		{if $issueCover}
 			<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
 				{capture assign="defaultAltText"}
@@ -47,14 +49,7 @@
 				{/capture}
 				<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}">
 			</a>
-		{/if}
-
-		{* Description *}
-		{if $issue->hasDescription()}
-			<div class="description">
-				{$issue->getLocalizedDescription()|strip_unsafe_html}
-			</div>
-		{/if}
+		{/if} *}
 
 		{* PUb IDs (eg - DOI) *}
 		{foreach from=$pubIdPlugins item=pubIdPlugin}
@@ -79,7 +74,7 @@
 		{/foreach}
 
 		{* Published date *}
-		{if $issue->getDatePublished()}
+		{* {if $issue->getDatePublished()}
 			<div class="published">
 				<span class="label">
 					{translate key="submissions.published"}:
@@ -88,7 +83,7 @@
 					{$issue->getDatePublished()|date_format:$dateFormatShort}
 				</span>
 			</div>
-		{/if}
+		{/if} *}
 	</div>
 
 	{* Full-issue galleys *}
@@ -128,4 +123,7 @@
 		</div>
 	{/foreach}
 	</div><!-- .sections -->
+</div>
+
+<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
 </div>

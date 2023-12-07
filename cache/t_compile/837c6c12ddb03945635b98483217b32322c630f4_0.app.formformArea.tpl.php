@@ -1,11 +1,19 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 4.3.1, created on 2023-12-07 08:37:01
+=======
+/* Smarty version 4.3.1, created on 2023-11-28 03:50:55
+>>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   from 'app:formformArea.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
+<<<<<<< HEAD
   'unifunc' => 'content_6571761dbd7e93_45638274',
+=======
+  'unifunc' => 'content_6565558f972505_40137489',
+>>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +28,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_6571761dbd7e93_45638274 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_6565558f972505_40137489 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
 ?>
 <fieldset <?php if ($_smarty_tpl->tpl_vars['FBV_id']->value) {?> id="<?php echo $_smarty_tpl->tpl_vars['FBV_id']->value;?>
 "<?php }

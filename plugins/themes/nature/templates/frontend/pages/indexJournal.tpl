@@ -69,21 +69,67 @@
 	{/if}
 
 	{* Latest issue *}
-	{if $issue}
-		<section class="current_issue">
-			<a id="homepageIssue"></a>
-			<h2>
-				{translate key="journal.currentIssue"}
-			</h2>
-			<div class="current_issue_title">
-				{$issue->getIssueIdentification()|strip_unsafe_html}
-			</div>
-			{include file="frontend/objects/issue_toc.tpl" heading="h3"}
-			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
-				{translate key="journal.viewAllIssues"}
-			</a>
-		</section>
-	{/if}
+	<div class="flex">
+		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-4 m-2">
+			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+			{if $issueCover}
+				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
+					{capture assign="defaultAltText"}
+						{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
+					{/capture}
+					<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}" class="w-64 h-auto rounded-3xl">
+				</a>
+			{/if}
+		</div>
+		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-4 m-2">
+			{if $issue}
+				<section class="current_issue">
+					<a id="homepageIssue"></a>
+					<p class="font-bold text-2xl">
+						{translate key="journal.currentIssue"}
+					</p>
+					<div class="current_issue_title">
+						{$issue->getIssueIdentification()|strip_unsafe_html}
+					</div>
+
+					{* Description *}
+					{if $issue->hasDescription()}
+						<div class="description text-justify pb-6">
+							{$issue->getLocalizedDescription()|strip_unsafe_html}
+						</div>
+					{/if}
+
+					{* Published date *}
+					{if $issue->getDatePublished()}
+						<div class="published">
+							{* <span class="label">
+								{translate key="submissions.published"}:
+							</span> *}
+							<button class="bg-[#006A68] text-[#FF8E06] font-bold py-2 px-4 rounded-3xl">
+								<span class="label">
+									{translate key="submissions.published"}:
+								</span>
+								<span class="value">
+									{$issue->getDatePublished()|date_format:$dateFormatShort}
+								</span>
+							</button>
+							<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl">
+								<a href="https://openjournaltheme.com/novelty-ojs3-theme" target="_blank" rel="noopener">Read More</a>
+							</button>
+							{* <span class="value">
+								{$issue->getDatePublished()|date_format:$dateFormatShort}
+							</span> *}
+						</div>
+					{/if}
+				</section>
+			{/if}
+		</div>
+	</div>
+	{* Show issue toc *}
+	{include file="frontend/objects/issue_toc.tpl" heading="h3"}
+		<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
+			{translate key="journal.viewAllIssues"}
+		</a>
 
 	{* Additional Homepage Content *}
 	{if $additionalHomeContent}
