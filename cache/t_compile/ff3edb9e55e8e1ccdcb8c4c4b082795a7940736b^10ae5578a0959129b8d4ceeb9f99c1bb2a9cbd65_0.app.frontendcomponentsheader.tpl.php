@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-06 08:02:00
+/* Smarty version 4.3.1, created on 2023-12-07 02:28:07
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65701c68e79a78_52842719',
+  'unifunc' => 'content_65711fa7b96f85_50057693',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701845418,
+      1 => 1701852266,
       2 => 'app',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_65701c68e79a78_52842719 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_65711fa7b96f85_50057693 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 
 <?php $_smarty_tpl->_assignInScope('showingLogo', true);

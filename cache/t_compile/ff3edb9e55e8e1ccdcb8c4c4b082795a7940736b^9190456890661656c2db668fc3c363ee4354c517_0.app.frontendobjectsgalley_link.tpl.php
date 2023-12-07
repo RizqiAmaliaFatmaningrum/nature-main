@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-05 03:10:42
+/* Smarty version 4.3.1, created on 2023-12-07 02:28:10
   from 'app:frontendobjectsgalley_link.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656e86a29d1f59_65722534',
+  'unifunc' => 'content_65711faa31c7a6_08870026',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9190456890661656c2db668fc3c363ee4354c517' => 
     array (
       0 => 'app:frontendobjectsgalley_link.tpl',
-      1 => 1701659212,
+      1 => 1701852266,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_656e86a29d1f59_65722534 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65711faa31c7a6_08870026 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['journalOverride']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('currentJournal', $_smarty_tpl->tpl_vars['journalOverride']->value);
 }?>
