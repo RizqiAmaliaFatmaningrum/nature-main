@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-05 03:25:34
+/* Smarty version 4.3.1, created on 2023-12-08 03:34:26
   from 'app:frontendcomponentsfooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656e8a1ee73df2_41939272',
+  'unifunc' => 'content_657280b2cdec14_23677941',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dffb64063bb972c37e05619a2ccd9d0ea7473ac' => 
     array (
       0 => 'app:frontendcomponentsfooter.tpl',
-      1 => 1701743114,
+      1 => 1701998117,
       2 => 'app',
     ),
   ),
   'includes' => 
   array (
+    'app:frontend/pages/userLogin.tpl' => 1,
   ),
 ),false)) {
-function content_656e8a1ee73df2_41939272 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657280b2cdec14_23677941 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 </main><!-- pkp_structure_main -->
 
@@ -32,8 +33,19 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 	<?php if ($_smarty_tpl->tpl_vars['sidebarCode']->value) {?>
 		<aside id="right" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.sidebar"),$_smarty_tpl ) ) ));?>
 ">
-			<?php echo $_smarty_tpl->tpl_vars['sidebarCode']->value;?>
+		
+		<?php $_smarty_tpl->_subTemplateRender("app:frontend/pages/userLogin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
+		<?php echo $_smarty_tpl->tpl_vars['sidebarCode']->value;?>
+
+
+				<?php if ($_smarty_tpl->tpl_vars['additionalHomeContent']->value) {?>
+			<div class="">
+								<?php echo $_smarty_tpl->tpl_vars['additionalHomeContent']->value;?>
+
+							</div>
+		<?php }?>
 		</aside><!-- pkp_sidebar.left -->
 	<?php }
 }?>

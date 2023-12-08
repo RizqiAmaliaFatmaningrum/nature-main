@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-04 07:18:09
+/* Smarty version 4.3.1, created on 2023-12-08 03:34:25
   from 'app:frontendpagesindexJournal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656d6f210d52f7_81511233',
+  'unifunc' => 'content_657280b1b54ae0_17912069',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e64e579388e5615e11e939b12134d6ae8679eba6' => 
     array (
       0 => 'app:frontendpagesindexJournal.tpl',
-      1 => 1701661505,
+      1 => 1702000015,
       2 => 'app',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/footer.tpl' => 1,
   ),
 ),false)) {
-function content_656d6f210d52f7_81511233 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657280b1b54ae0_17912069 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitleTranslated'=>$_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedName()), 0, false);
 ?>
@@ -43,16 +43,7 @@ $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_
 		</div>
 	<?php }?>
 
-		<?php if ($_smarty_tpl->tpl_vars['activeTheme']->value->getOption('showDescriptionInJournalIndex')) {?>
-		<section class="homepage_about">
-			<a id="homepageAbout"></a>
-			<h2><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"about.aboutContext"),$_smarty_tpl ) );?>
-</h2>
-			<?php echo $_smarty_tpl->tpl_vars['currentContext']->value->getLocalizedData('description');?>
-
-		</section>
-	<?php }?>
-
+			
 		<?php if ($_smarty_tpl->tpl_vars['numAnnouncementsHomepage']->value && smarty_modifier_count($_smarty_tpl->tpl_vars['announcements']->value)) {?>
 		<section class="cmp_announcements highlight_first">
 			<a id="homepageAnnouncements"></a>
@@ -99,7 +90,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<?php }?>
 
 		<div class="flex">
-		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-4 m-2">
+		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-2 m-2">
 			<?php $_smarty_tpl->_assignInScope('issueCover', $_smarty_tpl->tpl_vars['issue']->value->getLocalizedCoverImageUrl());?>
 			<?php if ($_smarty_tpl->tpl_vars['issueCover']->value) {?>
 				<a class="cover" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('op'=>"view",'page'=>"issue",'path'=>$_smarty_tpl->tpl_vars['issue']->value->getBestIssueId()),$_smarty_tpl ) );?>
@@ -114,11 +105,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</a>
 			<?php }?>
 		</div>
-		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-4 m-2">
+		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-10 m-2">
 			<?php if ($_smarty_tpl->tpl_vars['issue']->value) {?>
 				<section class="current_issue">
 					<a id="homepageIssue"></a>
-					<p class="font-bold text-2xl">
+					<p class="font-bold text-2xl mt-0">
 						<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"journal.currentIssue"),$_smarty_tpl ) );?>
 
 					</p>
@@ -163,13 +154,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 		</a>
 
-		<?php if ($_smarty_tpl->tpl_vars['additionalHomeContent']->value) {?>
-		<div class="additional_content">
-			<?php echo $_smarty_tpl->tpl_vars['additionalHomeContent']->value;?>
-
-		</div>
-	<?php }?>
-</div><!-- .page -->
+		</div><!-- .page -->
 
 <?php $_smarty_tpl->_subTemplateRender("app:frontend/components/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

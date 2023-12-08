@@ -29,13 +29,18 @@
 	{/if}
 
 	{* Journal Description *}
-	{if $activeTheme->getOption('showDescriptionInJournalIndex')}
+	{* {if $journalDescription}
+		<div class="journal-description">
+			{$journalDescription}
+		</div>
+	{/if} *}
+	{* {if $activeTheme->getOption('showDescriptionInJournalIndex')}
 		<section class="homepage_about">
 			<a id="homepageAbout"></a>
 			<h2>{translate key="about.aboutContext"}</h2>
 			{$currentContext->getLocalizedData('description')}
 		</section>
-	{/if}
+	{/if} *}
 
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|@count}
@@ -70,7 +75,7 @@
 
 	{* Latest issue *}
 	<div class="flex">
-		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-4 m-2">
+		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-2 m-2">
 			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 			{if $issueCover}
 				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
@@ -81,11 +86,11 @@
 				</a>
 			{/if}
 		</div>
-		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-4 m-2">
+		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-10 m-2">
 			{if $issue}
 				<section class="current_issue">
 					<a id="homepageIssue"></a>
-					<p class="font-bold text-2xl">
+					<p class="font-bold text-2xl mt-0">
 						{translate key="journal.currentIssue"}
 					</p>
 					<div class="current_issue_title">
@@ -132,11 +137,11 @@
 		</a>
 
 	{* Additional Homepage Content *}
-	{if $additionalHomeContent}
+	{* {if $additionalHomeContent}
 		<div class="additional_content">
 			{$additionalHomeContent}
 		</div>
-	{/if}
+	{/if} *}
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}

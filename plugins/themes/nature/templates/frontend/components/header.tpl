@@ -107,9 +107,16 @@
 						</a>
 					{/if}
 
-					<div class="bg-[#00504F] text-white p-10 z-10">
-						<h3 class="text-3xl font-bold">About Jurnal</h3>
-							<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
+					<div class="bg-[#00504F] text-white py-10 px-40 z-10">
+						<h3 class="text-3xl font-bold mb-3">About Juornal</h3>
+						{if $journalDescription}
+							<div class="journal-description">
+								<div class="text-justify">
+									{$journalDescription}
+								</div>
+							</div>
+						{/if}
+							{* <p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p> *}
 					</div>
 					{* <div class="bg-[#F4FEFD] ">
 						<div class=" rounded-3xl p-10">
@@ -185,48 +192,8 @@
 							{/if}
 		</div>
 
-		{* <p class="flex space-x-6">
-			<a href="https://www.facebook.com/sharer.php?u=https://demo.openjournaltheme.com/index.php/novelty/"
-			target="_blank"
-			rel="noopener"
-			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-				<em class="fa fa-facebook"></em>
-			</a>
-
-			<a href="https://telegram.me/share/url?url=https://demo.openjournaltheme.com/index.php/novelty/"
-			target="_blank"
-			rel="noopener"
-			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-				<em class="fa fa-telegram"></em>
-			</a>
-
-			<a href="https://api.whatsapp.com/send?text=https://demo.openjournaltheme.com/index.php/novelty/"
-			target="_blank"
-			rel="noopener"
-			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-				<em class="fa fa-whatsapp "></em>
-			</a>
-
-			<a href="https://twitter.com/intent/tweet?url=https://demo.openjournaltheme.com/index.php/novelty/"
-			target="_blank"
-			rel="noopener"
-			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-				<em class="fa fa-twitter"></em>
-			</a>
-
-			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://demo.openjournaltheme.com/index.php/novelty/"
-			target="_blank"
-			rel="noopener"
-			class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-				<em class="fa fa-linkedin"></em>
-			</a>
-		</p> *}
-
-		{* Wrapper for page content and sidebars *}
-		{* {if $isFullWidth}
-			{assign var=hasSidebar value=0}
-		{/if} *}
-		<div class="bg-[#F4FEFD] pkp_structure_content container">
+		
+		<div class="bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
 
 			<aside id="left" class="col-md-3"> </aside>
 			<main class="pkp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
