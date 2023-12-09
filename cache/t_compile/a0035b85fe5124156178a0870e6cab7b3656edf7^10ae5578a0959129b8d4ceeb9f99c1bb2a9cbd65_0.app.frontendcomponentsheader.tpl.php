@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-04 01:26:26
+/* Smarty version 4.3.1, created on 2023-12-08 04:19:44
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656d1cb26cace7_24218752',
+  'unifunc' => 'content_65728b508d6b30_85780254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701649579,
+      1 => 1702004343,
       2 => 'app',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/skipLinks.tpl' => 1,
   ),
 ),false)) {
-function content_656d1cb26cace7_24218752 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65728b508d6b30_85780254 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
@@ -136,41 +136,14 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 						<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
 					</div>
 				</div>
-				<div class="container mx-auto bg-[#F4FEFD]">
-					<div class="border rounded-t-3xl p-10">
-						<div class="flex">
-
-														<div class="flex-2 p-4 m-2">
-								<div class="w-30 h-20 bg-[#DAE4E3] rounded-2xl flex p-4 m-2">
-									<p class="text-lg m-auto color-[#00504F] font-bold">Sumbit Your Paper</p>
-										<div class="w-10 h-10 bg-[#00504F] rounded-full flex ">
-											<button href="#" class="text-lg m-auto">➕</button>
-										</div>
-								</div>
-							</div>
-
-							<div class="flex-1 bg-[#DAE4E3] p-4 m-2 rounded-2xl">
-								<p>current issues</p>
-							</div>
-
-														<div class="flex-initial w-64 p-4 m-2">
-								<div class="h-auto items-center justify-between md:8/12 bg-[#DAE4E3] rounded-2xl">
-									<section class="flex">
-										<input type="text" class="w-full h-10 font-medium ml-2 focus:outline-none bg-transparent" placeholder="Search...">
-										<button class="w-10 h-10 bg-[#00504F] flex justify-center item-center rounded-2xl ml-auto">🔍</button>
-									</section>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
+				
+																				
 				<?php if ($_smarty_tpl->tpl_vars['isFullWidth']->value) {?>
 			<?php $_smarty_tpl->_assignInScope('hasSidebar', 0);?>
 		<?php }?>
 		<div class="pkp_structure_content<?php if ($_smarty_tpl->tpl_vars['hasSidebar']->value) {?> has_sidebar<?php }?>">
 			<div class="pkp_structure_left col-xs-12">  </div>
-				<div class="pkp_structure_main col-xs-12 col-sm-10 col-md-6" role="main">
+				<div class="pkp_structure_main col-xs-12 col-md-6 col-sm-10 bg-[#DAE4E3] rounded-t-lg" role="main">
 					
 <?php }
 }

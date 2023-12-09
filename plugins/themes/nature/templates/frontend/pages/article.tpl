@@ -33,4 +33,4 @@
 
 </div><!-- .page -->
 
-{include file="frontend/components/footer.tpl"}
+{include file="frontend/pages/footer_article.tpl"}

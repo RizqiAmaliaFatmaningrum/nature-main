@@ -114,20 +114,9 @@
 										</div>
 								</div>
 							</div>
-
 							<div class="flex-1 bg-[#DAE4E3] p-4 m-2 rounded-2xl">
 								<p>current issues</p>
 							</div> *}
-
-							{* search *}
-							 <div class="flex-initial w-64 p-4 m-2">
-								<div class="h-auto items-center justify-between md:8/12 bg-[#DAE4E3] rounded-2xl">
-									<section class="flex">
-										<input type="text" class="w-full h-10 font-medium ml-2 focus:outline-none bg-transparent" placeholder="Search...">
-										<a href="http://localhost/nature-main1/index.php/MS/search" class="w-10 h-10 bg-[#00504F] flex justify-center item-center rounded-2xl p-3"><em class="fa fa-search" style="margin-right: -3px;"></em></a>
-									</section>
-								</div>
-							</div>
 						{* </div>
 					</div>
 				</div> *}

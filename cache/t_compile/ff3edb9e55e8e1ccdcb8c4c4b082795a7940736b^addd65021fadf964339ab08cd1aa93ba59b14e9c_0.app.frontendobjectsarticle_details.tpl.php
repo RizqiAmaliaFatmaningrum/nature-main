@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-07 08:30:52
+/* Smarty version 4.3.1, created on 2023-12-08 09:29:06
   from 'app:frontendobjectsarticle_details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_657174ac7d1ea4_40589494',
+  'unifunc' => 'content_6572d3d2b08f90_32756526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'addd65021fadf964339ab08cd1aa93ba59b14e9c' => 
     array (
       0 => 'app:frontendobjectsarticle_details.tpl',
-      1 => 1701934248,
+      1 => 1702024145,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_657174ac7d1ea4_40589494 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6572d3d2b08f90_32756526 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
     <?php if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
@@ -59,132 +59,13 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
                         </svg>
-
                     </a>
                 </div>
             </div>
         </div>
 
-                <?php if ($_smarty_tpl->tpl_vars['publication']->value->getData('datePublished')) {?>
-        <div class="item published">
-            <section class="sub_item bg-[#F4FEFD] rounded-2xl text-[#00504F] flex flex-col pl-5"
-                style="width: 300px; height: 80px;">
-                <h2 class="label ">
-                    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submissions.published"),$_smarty_tpl ) );?>
 
-                </h2>
-                <div class="value">
-                                        <?php if ($_smarty_tpl->tpl_vars['firstPublication']->value->getID() === $_smarty_tpl->tpl_vars['publication']->value->getId()) {?>
-                    <span><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['firstPublication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value);?>
-</span>
-                                        <?php } else { ?>
-                    <span><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.updatedOn",'datePublished'=>smarty_modifier_date_format($_smarty_tpl->tpl_vars['firstPublication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value),'dateUpdated'=>smarty_modifier_date_format($_smarty_tpl->tpl_vars['publication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value)),$_smarty_tpl ) );?>
-</span>
-                    <?php }?>
-                </div>
-            </section>
-            <?php if (count($_smarty_tpl->tpl_vars['article']->value->getPublishedPublications()) > 1) {?>
-            <section class="sub_item versions">
-                <h2 class="label">
-                    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.versions"),$_smarty_tpl ) );?>
-
-                </h2>
-                <ul class="value">
-                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, array_reverse($_smarty_tpl->tpl_vars['article']->value->getPublishedPublications()), 'iPublication');
-$_smarty_tpl->tpl_vars['iPublication']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['iPublication']->value) {
-$_smarty_tpl->tpl_vars['iPublication']->do_else = false;
-?>
-                    <?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "name", null);
-echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.versionIdentity",'datePublished'=>smarty_modifier_date_format($_smarty_tpl->tpl_vars['iPublication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value),'version'=>$_smarty_tpl->tpl_vars['iPublication']->value->getData('version')),$_smarty_tpl ) );
-$_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
-                    <li>
-                        <?php if ($_smarty_tpl->tpl_vars['iPublication']->value->getId() === $_smarty_tpl->tpl_vars['publication']->value->getId()) {?>
-                        <?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-
-                        <?php } elseif ($_smarty_tpl->tpl_vars['iPublication']->value->getId() === $_smarty_tpl->tpl_vars['currentPublication']->value->getId()) {?>
-                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"article",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['article']->value->getBestId()),$_smarty_tpl ) );?>
-"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-</a>
-                        <?php } else { ?>
-                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"article",'op'=>"view",'path'=>call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'to_array' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getBestId(),"version",$_smarty_tpl->tpl_vars['iPublication']->value->getId() ))),$_smarty_tpl ) );?>
-"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-</a>
-                        <?php }?>
-                    </li>
-                    <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                </ul>
-            </section>
-            <?php }?>
-        </div>
-        <?php }?>
-
-                <?php if ($_smarty_tpl->tpl_vars['issue']->value || $_smarty_tpl->tpl_vars['section']->value || $_smarty_tpl->tpl_vars['categories']->value) {?>
-        <div class="item issue">
-
-            <?php if ($_smarty_tpl->tpl_vars['issue']->value) {?>
-            <section class="sub_item bg-[#F4FEFD] rounded-2xl text-[#00504F] flex flex-col pl-5"
-                style="width: 300px; height: 80px;">
-                <h2 class="label">
-                    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"issue.issue"),$_smarty_tpl ) );?>
-
-                </h2>
-                <div class="value inline-block bg-[#00504F] text-white rounded-2xl text-white px-4" style="width: 280px;">
-                    <a class="title" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"issue",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['issue']->value->getBestIssueId()),$_smarty_tpl ) );?>
-">
-                        <?php echo $_smarty_tpl->tpl_vars['issue']->value->getIssueIdentification();?>
-
-                    </a>
-                </div>
-            </section>
-            <?php }?>
-
-            <?php if ($_smarty_tpl->tpl_vars['section']->value) {?>
-            <section class="sub_item bg-[#F4FEFD] rounded-2xl text-[#00504F] flex flex-col pl-5 "
-                style="width: 300px; height: 80px;">
-                <h2 class="label">
-                    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"section.section"),$_smarty_tpl ) );?>
-
-                </h2>
-                <div class="value inline-block bg-[#00504F] rounded-2xl text-white px-4" style="width: 230px;">
-                    <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['section']->value->getLocalizedTitle() ));?>
-
-                </div>
-            </section>
-            <?php }?>
-
-            <?php if ($_smarty_tpl->tpl_vars['categories']->value) {?>
-            <section class="sub_item">
-                <h2 class="label">
-                    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"category.category"),$_smarty_tpl ) );?>
-
-                </h2>
-                <div class="value">
-                    <ul class="categories">
-                        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
-$_smarty_tpl->tpl_vars['category']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
-$_smarty_tpl->tpl_vars['category']->do_else = false;
-?>
-                        <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('router'=>(defined('ROUTE_PAGE') ? constant('ROUTE_PAGE') : null),'page'=>"catalog",'op'=>"category",'path'=>call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['category']->value->getPath() ))),$_smarty_tpl ) );?>
-"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['category']->value->getLocalizedTitle() ));?>
-</a>
-                        </li>
-                        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    </ul>
-                </div>
-            </section>
-            <?php }?>
-        </div>
-        <?php }?>
-
-        <?php if ($_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('coverImage') || ($_smarty_tpl->tpl_vars['issue']->value && $_smarty_tpl->tpl_vars['issue']->value->getLocalizedCoverImage())) {?>
+                <?php if ($_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('coverImage') || ($_smarty_tpl->tpl_vars['issue']->value && $_smarty_tpl->tpl_vars['issue']->value->getLocalizedCoverImage())) {?>
         <div class="item cover_image">
             <div class="sub_item">
                 <?php if ($_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('coverImage')) {?>
@@ -195,6 +76,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 " style="width: 400px; height: auto;"
                     class="mx-auto border rounded-lg">
                 <ul class="flex space-x-4 mt-6 mb-0 justify-center text-teal-800 font-bold">
+
                     <li>
                         <section class="label flex hover:bg-[#6FF7F429] border-solid">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -202,12 +84,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <h2 class="label">
+                            <h2 id="abstractId" class="label mb-0">
                                 <a href="#"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"article.abstract"),$_smarty_tpl ) );?>
 </a>
                             </h2>
                         </section>
                     </li>
+
                     <li>
                         <section class="sub_item citation_display flex hover:bg-[#6FF7F429]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -221,6 +104,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </h2>
                         </section>
                     </li>
+
                     <li>
                         <section class="sub_item flex hover:bg-[#6FF7F429]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -233,6 +117,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </h2>
                         </section>
                     </li>
+
                     <li>
                         <section class="sub_item flex hover:bg-[#6FF7F429]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -283,7 +168,77 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 
                                             
                                                                                                                                                                                 
-                                
+                                <?php if ($_smarty_tpl->tpl_vars['citation']->value) {?>
+                <div id="citeId" class="item citation">
+                    <section class="sub_item citation_display">
+                        <h2 class="label">
+                            <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.howToCite"),$_smarty_tpl ) );?>
+
+                        </h2>
+                        <div class="value">
+                            <div id="citationOutimageput" role="region" aria-live="polite">
+                                <?php echo $_smarty_tpl->tpl_vars['citation']->value;?>
+
+                            </div>
+                            <div class="citation_formats">
+                                <button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats"
+                                    aria-expanded="false" data-csl-dropdown="true">
+                                    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.howToCite.citationFormats"),$_smarty_tpl ) );?>
+
+                                </button>
+                                <div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+                                    <ul class="citation_formats_styles">
+                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['citationStyles']->value, 'citationStyle');
+$_smarty_tpl->tpl_vars['citationStyle']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['citationStyle']->value) {
+$_smarty_tpl->tpl_vars['citationStyle']->do_else = false;
+?>
+                                        <li>
+                                            <a aria-controls="citationOutput" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"citationstylelanguage",'op'=>"get",'path'=>$_smarty_tpl->tpl_vars['citationStyle']->value['id'],'params'=>$_smarty_tpl->tpl_vars['citationArgs']->value),$_smarty_tpl ) );?>
+"
+                                                data-load-citation data-json-href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"citationstylelanguage",'op'=>"get",'path'=>$_smarty_tpl->tpl_vars['citationStyle']->value['id'],'params'=>$_smarty_tpl->tpl_vars['citationArgsJson']->value),$_smarty_tpl ) );?>
+">
+                                                <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['citationStyle']->value['title'] ));?>
+
+                                            </a>
+                                        </li>
+                                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                    </ul>
+                                    <?php if (count($_smarty_tpl->tpl_vars['citationDownloads']->value)) {?>
+                                    <div class="label">
+                                        <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.howToCite.downloadCitation"),$_smarty_tpl ) );?>
+
+                                    </div>
+                                    <ul class="citation_formats_styles">
+                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['citationDownloads']->value, 'citationDownload');
+$_smarty_tpl->tpl_vars['citationDownload']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['citationDownload']->value) {
+$_smarty_tpl->tpl_vars['citationDownload']->do_else = false;
+?>
+                                        <li>
+                                            <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"citationstylelanguage",'op'=>"download",'path'=>$_smarty_tpl->tpl_vars['citationDownload']->value['id'],'params'=>$_smarty_tpl->tpl_vars['citationArgs']->value),$_smarty_tpl ) );?>
+">
+                                                <span class="fa fa-download"></span>
+                                                <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['citationDownload']->value['title'] ));?>
+
+                                            </a>
+                                        </li>
+                                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                    </ul>
+                                    <?php }?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <?php }?>
+
                                 
                                 
                                             <?php }

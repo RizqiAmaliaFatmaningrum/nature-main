@@ -100,108 +100,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
                         </svg>
-
                     </a>
                 </div>
             </div>
         </div>
 
-        {* publised *}
-        {if $publication->getData('datePublished')}
-        <div class="item published">
-            <section class="sub_item bg-[#F4FEFD] rounded-2xl text-[#00504F] flex flex-col pl-5"
-                style="width: 300px; height: 80px;">
-                <h2 class="label ">
-                    {translate key="submissions.published"}
-                </h2>
-                <div class="value">
-                    {* If this is the original version *}
-                    {if $firstPublication->getID() === $publication->getId()}
-                    <span>{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}</span>
-                    {* If this is an updated version *}
-                    {else}
-                    <span>{translate key="submission.updatedOn"
-                        datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatShort
-                        dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}</span>
-                    {/if}
-                </div>
-            </section>
-            {if count($article->getPublishedPublications()) > 1}
-            <section class="sub_item versions">
-                <h2 class="label">
-                    {translate key="submission.versions"}
-                </h2>
-                <ul class="value">
-                    {foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
-                    {capture assign="name"}{translate key="submission.versionIdentity"
-                    datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort
-                    version=$iPublication->getData('version')}{/capture}
-                    <li>
-                        {if $iPublication->getId() === $publication->getId()}
-                        {$name}
-                        {elseif $iPublication->getId() === $currentPublication->getId()}
-                        <a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
-                        {else}
-                        <a href="{url page="article" op="view"
-                            path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
-                        {/if}
-                    </li>
-                    {/foreach}
-                </ul>
-            </section>
-            {/if}
-        </div>
-        {/if}
 
-        {* issue *}
-        {if $issue || $section || $categories}
-        <div class="item issue">
-
-            {if $issue}
-            <section class="sub_item bg-[#F4FEFD] rounded-2xl text-[#00504F] flex flex-col pl-5"
-                style="width: 300px; height: 80px;">
-                <h2 class="label">
-                    {translate key="issue.issue"}
-                </h2>
-                <div class="value inline-block bg-[#00504F] text-white rounded-2xl text-white px-4" style="width: 280px;">
-                    <a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-                        {$issue->getIssueIdentification()}
-                    </a>
-                </div>
-            </section>
-            {/if}
-
-            {if $section}
-            <section class="sub_item bg-[#F4FEFD] rounded-2xl text-[#00504F] flex flex-col pl-5 "
-                style="width: 300px; height: 80px;">
-                <h2 class="label">
-                    {translate key="section.section"}
-                </h2>
-                <div class="value inline-block bg-[#00504F] rounded-2xl text-white px-4" style="width: 230px;">
-                    {$section->getLocalizedTitle()|escape}
-                </div>
-            </section>
-            {/if}
-
-            {if $categories}
-            <section class="sub_item">
-                <h2 class="label">
-                    {translate key="category.category"}
-                </h2>
-                <div class="value">
-                    <ul class="categories">
-                        {foreach from=$categories item=category}
-                        <li><a href="{url router=$smarty.const.ROUTE_PAGE page="catalog" op="category"
-                                path=$category->getPath()|escape}">{$category->getLocalizedTitle()|escape}</a>
-                        </li>
-                        {/foreach}
-                    </ul>
-                </div>
-            </section>
-            {/if}
-        </div>
-        {/if}
-
+        {* list bottom in the cover image *}
         {if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
         <div class="item cover_image">
             <div class="sub_item">
@@ -211,6 +116,7 @@
                     alt="{$coverImage.altText|escape|default:''}" style="width: 400px; height: auto;"
                     class="mx-auto border rounded-lg">
                 <ul class="flex space-x-4 mt-6 mb-0 justify-center text-teal-800 font-bold">
+
                     <li>
                         <section class="label flex hover:bg-[#6FF7F429] border-solid">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -218,11 +124,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <h2 class="label">
+                            <h2 id="abstractId" class="label mb-0">
                                 <a href="#">{translate key="article.abstract"}</a>
                             </h2>
                         </section>
                     </li>
+
                     <li>
                         <section class="sub_item citation_display flex hover:bg-[#6FF7F429]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -235,6 +142,7 @@
                             </h2>
                         </section>
                     </li>
+
                     <li>
                         <section class="sub_item flex hover:bg-[#6FF7F429]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -247,6 +155,7 @@
                             </h2>
                         </section>
                     </li>
+
                     <li>
                         <section class="sub_item flex hover:bg-[#6FF7F429]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -534,8 +443,8 @@
                 {/if} *}
 
                 {* How to cite *}
-                {* {if $citation}
-                <div class="item citation">
+                {if $citation}
+                <div id="citeId" class="item citation">
                     <section class="sub_item citation_display">
                         <h2 class="label">
                             {translate key="submission.howToCite"}
@@ -583,7 +492,7 @@
                         </div>
                     </section>
                 </div>
-                {/if} *}
+                {/if}
 
                 {* Issue article appears in *}
                 {* {if $issue || $section || $categories}

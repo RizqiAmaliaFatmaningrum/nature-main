@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-29 10:00:33
+/* Smarty version 4.3.1, created on 2023-12-08 02:51:51
   from 'app:frontendpagesarticle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6566fdb169c419_35998254',
+  'unifunc' => 'content_657276b7af9377_46576703',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c372c95cd85572e0fbc9a53d0323a0b229cfc78' => 
     array (
       0 => 'app:frontendpagesarticle.tpl',
-      1 => 1701154828,
+      1 => 1702000287,
       2 => 'app',
     ),
   ),
@@ -21,10 +21,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/header.tpl' => 1,
     'app:frontend/components/breadcrumbs_article.tpl' => 2,
     'app:frontend/objects/article_details.tpl' => 1,
-    'app:frontend/components/footer.tpl' => 1,
+    'app:frontend/pages/footer_article.tpl' => 1,
   ),
 ),false)) {
-function content_6566fdb169c419_35998254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657276b7af9377_46576703 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitleTranslated'=>call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getLocalizedFullTitle() ))), 0, false);
 ?>
 
@@ -45,6 +45,6 @@ $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_
 
 </div><!-- .page -->
 
-<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("app:frontend/pages/footer_article.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
