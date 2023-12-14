@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-08 03:59:07
+/* Smarty version 4.3.1, created on 2023-11-29 03:51:56
   from 'app:controllersgridpluginspluginGalleryGridFilter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6572867b692635_76521936',
+  'unifunc' => 'content_6566a74c4b1c04_33868582',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6572867b692635_76521936 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6566a74c4b1c04_33868582 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 	// Attach the form handler to the form.
