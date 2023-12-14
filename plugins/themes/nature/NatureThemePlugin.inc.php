@@ -104,50 +104,63 @@ class NatureThemePlugin extends ThemePlugin
 			
 		]);
 
+		// Determine the path to the glyphicons font in Bootstrap
+        $iconFontPath              = $this->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
+        $additionalLessVariables[] = '@headerColor:' . $this->getOption('headerColor') . ';';
+        $additionalLessVariables[] = '@linkBtnColor:' . $this->getOption('linkBtnColor') . ';';
+        $additionalLessVariables[] = '@sideBarHeaderBackground:' . $this->getOption('sideBarHeaderBackground') . ';';
+
 		// Load primary stylesheet
 		$this->addStyle('stylesheet', 'styles/index.less');
 		// $this->addScript('tailwind', 'https://cdn.tailwindcss.com',['baseUrl' => ""] );
 		
 
-		// Store additional LESS variables to process based on options
-		$additionalLessVariables = array();
+		$this->addStyle('noveltyLess', 'styles/novelty.less', ['baseUrl' => $this->_getBaseUrl()]);
+        $this->addStyle('novelty', 'styles/novelty.css');
+        $this->modifyStyle('noveltyLess', ['addLessVariables' => join($additionalLessVariables)]);
+        $this->addStyle('responsive', 'styles/responsive.css');
 
-		if ($this->getOption('typography') === 'notoSerif') {
-			$this->addStyle('font', 'styles/fonts/notoSerif.less');
-			$additionalLessVariables[] = '@font: "Noto Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;';
-		} elseif (strpos($this->getOption('typography'), 'notoSerif') !== false) {
-			$this->addStyle('font', 'styles/fonts/notoSans_notoSerif.less');
-			if ($this->getOption('typography') == 'notoSerif_notoSans') {
-				$additionalLessVariables[] = '@font-heading: "Noto Serif", serif;';
-			} elseif ($this->getOption('typography') == 'notoSans_notoSerif') {
-				$additionalLessVariables[] = '@font: "Noto Serif", serif;@font-heading: "Noto Sans", serif;';
-			}
-		} elseif ($this->getOption('typography') == 'lato') {
-			$this->addStyle('font', 'styles/fonts/lato.less');
-			$additionalLessVariables[] = '@font: Lato, sans-serif;';
-		} elseif ($this->getOption('typography') == 'lora') {
-			$this->addStyle('font', 'styles/fonts/lora.less');
-			$additionalLessVariables[] = '@font: Lora, serif;';
-		} elseif ($this->getOption('typography') == 'lora_openSans') {
-			$this->addStyle('font', 'styles/fonts/lora_openSans.less');
-			$additionalLessVariables[] = '@font: "Open Sans", sans-serif;@font-heading: Lora, serif;';
-		} else {
-			$this->addStyle('font', 'styles/fonts/notoSans.less');
-		}
+		// Store additional LESS variables to process based on options
+		// $additionalLessVariables = array();
+
+	
+
+		// if ($this->getOption('typography') === 'notoSerif') {
+		// 	$this->addStyle('font', 'styles/fonts/notoSerif.less');
+		// 	$additionalLessVariables[] = '@font: "Noto Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;';
+		// } elseif (strpos($this->getOption('typography'), 'notoSerif') !== false) {
+		// 	$this->addStyle('font', 'styles/fonts/notoSans_notoSerif.less');
+		// 	if ($this->getOption('typography') == 'notoSerif_notoSans') {
+		// 		$additionalLessVariables[] = '@font-heading: "Noto Serif", serif;';
+		// 	} elseif ($this->getOption('typography') == 'notoSans_notoSerif') {
+		// 		$additionalLessVariables[] = '@font: "Noto Serif", serif;@font-heading: "Noto Sans", serif;';
+		// 	}
+		// } elseif ($this->getOption('typography') == 'lato') {
+		// 	$this->addStyle('font', 'styles/fonts/lato.less');
+		// 	$additionalLessVariables[] = '@font: Lato, sans-serif;';
+		// } elseif ($this->getOption('typography') == 'lora') {
+		// 	$this->addStyle('font', 'styles/fonts/lora.less');
+		// 	$additionalLessVariables[] = '@font: Lora, serif;';
+		// } elseif ($this->getOption('typography') == 'lora_openSans') {
+		// 	$this->addStyle('font', 'styles/fonts/lora_openSans.less');
+		// 	$additionalLessVariables[] = '@font: "Open Sans", sans-serif;@font-heading: Lora, serif;';
+		// } else {
+		// 	$this->addStyle('font', 'styles/fonts/notoSans.less');
+		// }
 
 		// Update colour based on theme option
-		if ($this->getOption('baseColour') !== '#1E6292') {
-			$additionalLessVariables[] = '@bg-base:' . $this->getOption('baseColour') . ';';
-			if (!$this->isColourDark($this->getOption('baseColour'))) {
-				$additionalLessVariables[] = '@text-bg-base:rgba(0,0,0,0.84);';
-				$additionalLessVariables[] = '@bg-base-border-color:rgba(0,0,0,0.2);';
-			}
-		}
+		// if ($this->getOption('baseColour') !== '#1E6292') {
+		// 	$additionalLessVariables[] = '@bg-base:' . $this->getOption('baseColour') . ';';
+		// 	if (!$this->isColourDark($this->getOption('baseColour'))) {
+		// 		$additionalLessVariables[] = '@text-bg-base:rgba(0,0,0,0.84);';
+		// 		$additionalLessVariables[] = '@bg-base-border-color:rgba(0,0,0,0.2);';
+		// 	}
+		// }
 
 		// Pass additional LESS variables based on options
-		if (!empty($additionalLessVariables)) {
-			$this->modifyStyle('stylesheet', array('addLessVariables' => join("\n", $additionalLessVariables)));
-		}
+		// if (!empty($additionalLessVariables)) {
+		// 	$this->modifyStyle('stylesheet', array('addLessVariables' => join("\n", $additionalLessVariables)));
+		// }
 
 		$request = Application::get()->getRequest();
 
@@ -189,6 +202,15 @@ class NatureThemePlugin extends ThemePlugin
 		$this->addScript('popper', 'js/lib/popper/popper.js');
 		$this->addScript('bsUtil', 'js/lib/bootstrap/util.js');
 		$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');
+
+		$this->addScript('novelty', 'js/novelty.js');
+		$this->addStyle('lightbox', 'js/lightbox.min.css');
+        $this->addScript('lightboxJs', 'js/lightbox.min.js');
+		$this->addScript('readmore', 'js/readmore.min.js');
+		$this->addScript('sticky', 'js/sticky.min.js');
+		$this->addScript('toggle', 'js/toggle.js');
+		$this->addScript('ionic', 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js',['baseUrl' => ""] );
+		$this->addScript('ionic2', 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js',['baseUrl' => ""] );
 
 		// Load custom JavaScript for this theme
 		$this->addScript('default', 'js/main.js');

@@ -1,0 +1,110 @@
+/* Responsive */
+/* Iphone X */
+@media (max-width: 376px) {
+    .issn { 
+        font-size: 0.9em;
+        text-align: center !important;
+        margin-top: 10px !important;
+    }
+    .block_custom#share_article { margin-bottom: 0;}
+    .jatsParser__articleView {display: block !important}
+
+    .article-summary .doi_container {   
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+/* Mobile VIew */
+@media (max-width: 640px) {
+    .navbar-default .navbar-collapse { padding-left: 20px !important;}
+
+
+    aside#left {
+        padding-left: 0 !important;
+        padding-right: 0;
+    }
+
+    aside#right {      
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .article-summary .doi_container {   
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    footer[role="contentinfo"] { padding: 0}
+    footer .container {  
+        padding: 20px 20px;
+    }
+
+    .navbar-form .form-group {
+        margin-bottom: 10px;
+        width: 95%;
+    }
+
+    .navbar-default .navbar-collapse { border-top: transparent !important}
+    #nav-menu li {
+        padding-left: 10px;
+    }
+    .navbar-form { border:  0;}
+
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>li>a:hover {      
+        border-bottom:0 !important;
+    }
+
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+        border-bottom: 0 !important;
+    }
+
+
+    /* article summary */
+
+
+
+    /* article -detail  */
+    .pkp_page_article .pkp_structure_content.container { padding: 0;}
+    .pkp_page_article .tabbable-panel {
+        margin-top: 40px;
+    }
+    .keywords .item { 
+        margin: auto !important;
+    }
+
+    .pkp_page_article  .cmp_breadcrumbs { display: none}
+
+    .article-toc { 
+        padding-top:  5px;
+    }
+
+    .breadcrumb { display: none;}
+    .navbar-form { box-shadow: none;}
+
+    div.issn { padding: 10px 10px 15px 10px; margin-top: -10px;}
+    #nav-menu li { width: 95%; padding: 4px;}
+    #nav-menu li a { color: rgb(184, 184, 184)}
+
+    .tabbable-line > .nav-tabs > li { opacity: 1;}
+    .responsive-tabs>.nav-tabs>li.active { border-bottom: 1px solid #f1f0f0;}
+   
+    #share_article { 
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 100%;
+    }
+    .block_custom#share_article { margin-bottom: 0;}
+    .jatsParser__articleView {display: block !important}
+}
+
+
+
+
+@media (min-width: 1200px) { 
+    .container {
+        width: 1270px;
+    }
+}

@@ -13,9 +13,10 @@
 
 <div class="page page_privacy">
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="manager.setup.privacyStatement"}
-	<h1>
+	<h1 class="font-bold text-2xl">
 		{translate key="manager.setup.privacyStatement"}
 	</h1>
+	<hr class="my-5 w-full border-t-2 border-[#00504F]">
 	{$privacyStatement}
 </div><!-- .page -->
 

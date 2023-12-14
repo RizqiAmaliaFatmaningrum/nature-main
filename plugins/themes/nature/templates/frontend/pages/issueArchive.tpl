@@ -25,10 +25,10 @@
 
 <div class="page page_issue_archive">
 	{include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
-	<h1>
+	<h1 class="font-bold text-2xl">
 		{$pageTitle|escape}
 	</h1>
-
+	<hr class="my-5 w-full border-t-2 border-[#00504F]">
 	{* No issues have been published *}
 	{if empty($issues)}
 		<p>{translate key="current.noCurrentIssueDesc"}</p>

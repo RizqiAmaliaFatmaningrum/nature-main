@@ -58,43 +58,49 @@
 			{/capture}
 			
 			<div class="container mx-auto">
-				{* <div class="flex items-center justify-between relative"> *}
-				<nav class="p-5 bg-[#F4FEFD] shadow flex items-center justify-between">
-					<div class="flex items-center">
-						<span class="text-2xl font-bold cursor-pointer">
+				<div class="p-5 bg-[#F4FEFD] shadow xl:flex xl:items-center xl:justify-between">
+					<div class="flex justify-between items-center">
+						<span class="text-2xl font-bold text-dark hover:text-[#00504F] cursor-pointer">
 							<img class="h-10 inline" src="">
 							<a href="{$homeUrl}" class="is_text">{$displayPageHeaderTitle|escape}</a>
 						</span>
+
+						{* <div class="flex items-center px-4">
+							<button id="hamburger" name="hamburger" type="button" class="block right-4 xl:hidden">
+								<span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+								<span class="hamburger-line transition duration-300 ease-in-out"></span>
+								<span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+							</button>
+						</div> *}
+						<button id="hamburger">
+							<span class="text-3xl cursor-pointer mx-2 xl:hidden block">
+								<ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+							</span>
+						</button>
 					</div>
 
 					{capture assign="primaryMenu"}
 						{load_menu name="primary" id="main-navigation" ulClass="nav navbar-nav"}
 					{/capture}
-
-					{if !empty(trim($primaryMenu)) || $currentContext}
-						<!-- Primary navigation menu for the current application -->
-						<div class="flex items-center font-bold">
-						  {$primaryMenu}
-						  
-						  <!-- Search form -->
-						  {* {if $currentContext}
-							<div class="ml-auto">
-							  {include file="frontend/components/searchForm_simple.tpl"}
+					<nav id="navbar" class="navbar xl:flex xl:items-center xl:justify-between">
+						{if !empty(trim($primaryMenu)) || $currentContext}
+							<!-- Primary navigation menu for the current application -->
+							<div class="font-bold">
+							{$primaryMenu}
 							</div>
-						  {/if} *}
-						</div>
-					{/if}
+						{/if}
 
-					<nav aria-label="{translate|escape key="common.navigation.user"}" class="md:col-12 pr-0" >
-							<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl ml-4">
-								{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
+						<nav aria-label="{translate|escape key="common.navigation.user"}" class="md:col-12 pr-0" >
+							<button class="bg-[#FF8E06] text-white font-bold my-0 py-2 px-4 rounded-3xl ml-4">
+								{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right flex"}
 							</button>
+						</nav>
 					</nav>
-				</nav>
-				{* </div> *}
+				</div>
 			</div>	
 
-			<div class="container mx-auto shadow bg-green">
+
+			<div class="container mx-auto">
 					{if $displayPageHeaderLogo}
 						<a href="{$homeUrl}" class="is_img">
 							<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} />
@@ -110,13 +116,11 @@
 					<div class="bg-[#00504F] text-white py-10 px-40 z-10">
 						<h3 class="text-3xl font-bold mb-3">About Juornal</h3>
 						{if $journalDescription}
-							<div class="journal-description">
-								<div class="text-justify">
-									{$journalDescription}
-								</div>
+							<div class="text-justify">
+								{$journalDescription}
 							</div>
 						{/if}
-							{* <p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p> *}
+							{* <p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning axlorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p> *}
 					</div>
 					{* <div class="bg-[#F4FEFD] ">
 						<div class=" rounded-3xl p-10">
@@ -179,9 +183,10 @@
 				
 			{* </div><!-- .pkp_head_wrapper --> *}
 		</header><!-- .pkp_structure_head -->
-
-		<div>
-			{* Search form *}
+		
+		{* Search form *}
+		{* <div>
+			
 							{if $currentContext && $requestedPage !== 'search'}
 								<div class="pkp_navigation_search_wrapper">
 									<a href="{url page="search"}" class="pkp_search pkp_search_desktop">
@@ -190,13 +195,15 @@
 									</a>
 								</div>
 							{/if}
-		</div>
+		</div> *}
 
 		
-		<div class="bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
 
-			<aside id="left" class="col-md-3"> </aside>
-			<main class="pkp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
+		<div class="lg:flex bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
+
+			<aside id="left" class="lg:w-1/4 xl:w-1/4 m-2 col-md-3"> 
+			</aside>
+			<main class="lg:w-1/2 xl:w-1/2 bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
 
 			
 			

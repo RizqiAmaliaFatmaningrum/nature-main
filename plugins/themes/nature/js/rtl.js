@@ -1,0 +1,1 @@
+var isRtl = true;

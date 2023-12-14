@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-08 03:32:04
+/* Smarty version 4.3.1, created on 2023-12-12 08:31:32
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6572802423a9e8_39402073',
+  'unifunc' => 'content_65780c546ad899_37518108',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701999719,
+      1 => 1702366277,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_6572802423a9e8_39402073 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65780c546ad899_37518108 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 
@@ -116,7 +116,7 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 				</nav>
 							</div>	
 
-			<div class="container mx-auto shadow bg-green">
+			<div class="container mx-auto">
 					<?php if ($_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {?>
 						<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
 " class="is_img">
@@ -144,11 +144,9 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 					<div class="bg-[#00504F] text-white py-10 px-40 z-10">
 						<h3 class="text-3xl font-bold mb-3">About Juornal</h3>
 						<?php if ($_smarty_tpl->tpl_vars['journalDescription']->value) {?>
-							<div class="journal-description">
-								<div class="text-justify">
-									<?php echo $_smarty_tpl->tpl_vars['journalDescription']->value;?>
+							<div class="text-justify">
+								<?php echo $_smarty_tpl->tpl_vars['journalDescription']->value;?>
 
-								</div>
 							</div>
 						<?php }?>
 												</div>
@@ -162,25 +160,13 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 							
 				
 					</header><!-- .pkp_structure_head -->
-
-		<div>
-										<?php if ($_smarty_tpl->tpl_vars['currentContext']->value && $_smarty_tpl->tpl_vars['requestedPage']->value !== 'search') {?>
-								<div class="pkp_navigation_search_wrapper">
-									<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"search"),$_smarty_tpl ) );?>
-" class="pkp_search pkp_search_desktop">
-										<span class="fa fa-search" aria-hidden="true"></span>
-										<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.search"),$_smarty_tpl ) );?>
-
-									</a>
-								</div>
-							<?php }?>
-		</div>
-
 		
-						<div class="bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
+				
 
-			<aside id="left" class="col-md-3"> </aside>
-			<main class="pkp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
+		<div class="lg:flex bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
+
+			<aside id="left" class="lg:w-1/4 xl:w-1/4 m-2 col-md-3"> </aside>
+			<main class="lg:w-1/2 xl:w-1/2 kp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
 
 			
 			

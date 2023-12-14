@@ -1,0 +1,227 @@
+@import "bootstrap.less";
+
+
+@lightColor: saturate(lighten(@linkBtnColor, 35%), 45%);
+@darkerColor: darken(@linkBtnColor, 13%);
+@transparentColor : fade(darken(@linkBtnColor, 15%), 40%);
+@fontColorSoft: desaturate(lighten(@linkBtnColor, 58%), 15%);
+@btnLightColor : saturate(lighten(@linkBtnColor, 35%), 34%);
+@lightenColor : saturate(lighten(@linkBtnColor, 5%), 15%);
+
+
+@borderBottomColor : saturate(lighten(@headerColor, 5%), 15%);
+
+
+.container.main_menu {
+  background: @headerColor;
+}
+
+.PlumX-Summary .pps-branding-top {
+  background: @headerColor;
+}
+
+.page-header h2 {
+  color: darken(@linkBtnColor, 15%);
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>li>a:hover,
+.container.main_menu #nav-menu .nav>li>a:hover {
+  //    border-bottom: 3px solid saturate(lighten(@headerColor, 5%), 15%);  
+  //    margin-top: -1px; 
+  background: linear-gradient(to bottom, fade(@borderBottomColor, 1%), fade(@borderBottomColor, 1%), fade(@borderBottomColor, 4%), fade(@borderBottomColor, 80%));
+}
+
+.pkp_block h2.title,
+.pkp_block .content span.title,
+.pkp_block span.title {
+  color: saturate(lighten(@headerColor, 8%), 10%);
+}
+
+a,
+#customblock-SidebarMenu p.menu_item a,
+#customblock-sidebarmenu p.menu_item a
+ {
+  color: @linkBtnColor;
+}
+
+a:hover,
+#customblock-SidebarMenu p.menu_item a:hover,
+#customblock-sidebarmenu p.menu_item a:hover
+ {
+  color: @darkerColor
+}
+
+.btn-primary:hover {
+  background-color: darken(@linkBtnColor, 23%);
+}
+
+small.categories {
+  background: darken(@linkBtnColor, 25%)
+}
+
+.page-header a.btn.btn-default.btn-xs,
+ul#navigationUser li a {
+  color: @linkBtnColor;
+}
+
+
+
+.btn-primary,
+.article-references .btn-info {
+  color: lighten(@linkBtnColor, 5%);
+  border: 1px solid lighten(@linkBtnColor, 8%);
+}
+
+a.galley-link {
+  color: lighten(@linkBtnColor, 5%)
+}
+
+.tabbable-line>.nav-tabs>li.active {
+  border-bottom: 2px solid @linkBtnColor;
+}
+
+footer .container {
+  background: darken(@headerColor, 25%);
+  color: #bbbbbb;
+}
+
+footer a {
+  color: lighten(@linkBtnColor, 25%);
+}
+
+
+// keyword cloud 
+a.cloudword1 {
+  color: lighten(@linkBtnColor, 15%);
+}
+
+a.cloudword2 {
+  color: lighten(spin(@linkBtnColor, 8%), 10%);
+}
+
+a.cloudword3 {
+  color: lighten(spin(@linkBtnColor, 28%), 15%);
+}
+
+a.cloudword4 {
+  color: lighten(spin(@linkBtnColor, 25%), 15%);
+}
+
+a.cloudword5 {
+  color: lighten(spin(@linkBtnColor, 80%), 15%);
+}
+
+a.cloudword6 {
+  color: lighten(spin(@linkBtnColor, 60%), 20%);
+}
+
+
+// responsive tab 
+@xs: 768px;
+
+
+.responsive-tabs.nav-tabs {
+  position: relative;
+  z-index: 10;
+  height: 42px;
+  overflow: visible;
+  border-bottom: none;
+  display: block;
+  clear: both;
+
+  @media(min-width: @xs) {
+    border-bottom: 1px solid #ddd;
+  }
+
+
+
+  span.glyphicon {
+    position: absolute;
+    top: 14px;
+    right: 22px;
+
+    &.glyphicon-triangle-top {
+      display: none;
+    }
+
+    @media(min-width: @xs) {
+      display: none;
+    }
+  }
+
+  >li {
+    display: none;
+    float: none;
+    text-align: center;
+    opacity: 1;
+    background: white;
+    border: 1px solid rgb(219, 219, 219);
+
+    &:last-of-type>a {
+      margin-right: 0;
+    }
+
+    >a {
+      margin-right: 0;
+      background: #fff;
+      border: 1px solid #DDDDDD;
+
+      @media(min-width: @xs) {
+        margin-right: 4px;
+      }
+    }
+
+    &.active {
+      display: block;
+
+      a {
+        @media(min-width: @xs) {
+          border-bottom-color: transparent;
+        }
+
+        border: 1px solid #DDDDDD;
+        border-radius: 2px;
+      }
+    }
+
+    @media(min-width: @xs) {
+      display: block;
+      float: left;
+    }
+
+  }
+
+  &.open {
+
+    span.glyphicon {
+      &.glyphicon-triangle-top {
+        display: block;
+
+        @media(min-width: @xs) {
+          display: none;
+        }
+      }
+
+      &.glyphicon-triangle-bottom {
+        display: none;
+      }
+    }
+
+    >li {
+      display: block;
+
+      a {
+        border-radius: 0;
+      }
+
+      &:first-of-type a {
+        border-radius: 2px 2px 0 0;
+      }
+
+      &:last-of-type a {
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+}

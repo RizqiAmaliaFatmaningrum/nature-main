@@ -10,7 +10,7 @@
  * @uses $announcement Announcement The announcement to display
  * @uses $heading string HTML heading element, default: h2
  *}
-{if !$heading}
+{* {if !$heading}
 	{assign var="heading" value="h2"}
 {/if}
 
@@ -34,4 +34,27 @@
 			</span>
 		</a>
 	</div>
-</article><!-- .obj_announcement_summary -->
+</article><!-- .obj_announcement_summary --> *}
+
+<article class="announcement-summary media">
+	<div class="media-body">
+		<h2 class="media-heading">
+			<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}">
+				{$announcement->getLocalizedTitle()|escape}
+			</a>
+		</h2>
+		<p class="date">
+			<span class="fa fa-calendar"></span>
+			{if ($journalVersion >= '33')}
+				{$announcement->getDatePosted()|escape|date_format:$dateFormatLong}
+			{else}
+				{$announcement->getDatePosted()|escape|date_format:"%e %B %Y"}
+			{/if}
+		</p>
+		
+		<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}">
+			{$announcement->getLocalizedDescriptionShort()|strip_unsafe_html}
+		</a>
+	</div>
+</article><!-- .announcement-summary -->
+

@@ -18,7 +18,7 @@
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
-<div class="page_index_journal">
+<div class="relative page_index_journal">
 
 	{call_hook name="Templates::Index::journal"}
 
@@ -73,9 +73,27 @@
 		</section>
 	{/if}
 
+	{if $numAnnouncementsHomepage && $announcements|count}
+		<section class="cmp_announcements media">
+			<header class="page-header">
+				<h2>
+					{translate key="announcement.announcements"}
+				</h2>
+			</header>
+			<div class="media-list">
+				{foreach name=announcements from=$announcements item=announcement}
+					{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
+						{break}
+					{/if}
+					{include file="frontend/objects/announcement_summary.tpl" heading="h3"}
+				{/foreach}
+			</div>
+		</section>
+	{/if}
+
 	{* Latest issue *}
 	<div class="flex">
-		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-2 m-2">
+		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-2 m-2 shadow-lg">
 			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 			{if $issueCover}
 				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
@@ -86,7 +104,7 @@
 				</a>
 			{/if}
 		</div>
-		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-10 m-2">
+		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-10 m-4 shadow-lg">
 			{if $issue}
 				<section class="current_issue">
 					<a id="homepageIssue"></a>
@@ -99,7 +117,7 @@
 
 					{* Description *}
 					{if $issue->hasDescription()}
-						<div class="description text-justify pb-6">
+						<div class="description  text-justify pb-6">
 							{$issue->getLocalizedDescription()|strip_unsafe_html}
 						</div>
 					{/if}
@@ -132,10 +150,11 @@
 	</div>
 	{* Show issue toc *}
 	{include file="frontend/objects/issue_toc.tpl" heading="h3"}
-		<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
-			{translate key="journal.viewAllIssues"}
-		</a>
-
+		<button class="mx-2 my-4 relative bg-[#00504F] text-white font-bold py-2 px-4 rounded-3xl">
+			<a href="{url router=$smarty.const.ROUTE_PAGE page='issue' op='archive'}" class="read_more flex items-center">
+				<span class="mr-2">{translate key='journal.viewAllIssues'}</span>
+			</a>
+		</button>
 	{* Additional Homepage Content *}
 	{* {if $additionalHomeContent}
 		<div class="additional_content">

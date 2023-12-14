@@ -13,34 +13,45 @@
 {include file="frontend/components/header.tpl" pageTitle="about.submissions"}
 
 <div class="page page_submissions">
+
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.submissions"}
-	<h1>
+
+	{* Page title *}
+	<h1 class="font-bold text-2xl">
 		{translate key="about.submissions"}
 	</h1>
+	{* end title *}
+	<hr class="my-5 w-full border-t-2 border-[#00504F]">
 
-	<div class="cmp_notification">
-		{if $sections|@count == 0 || $currentContext->getData('disableSubmissions')}
-			{translate key="author.submit.notAccepting"}
+	{* Login/register prompt *}
+	<div class="bg-white p-4 m-4 border-l-4 border-[#00504F]">
+		{if $isUserLoggedIn}
+			{capture assign="newSubmission"}<a
+				href="{url page="submission" op="wizard"}">{translate key="about.onlineSubmissions.newSubmission"}</a>{/capture}
+			{capture assign="viewSubmissions"}<a
+				href="{url page="submissions"}">{translate key="about.onlineSubmissions.viewSubmissions"}</a>{/capture}
+			<div class="alert alert-info">
+				{translate key="about.onlineSubmissions.submissionActions" newSubmission=$newSubmission viewSubmissions=$viewSubmissions}
+			</div>
 		{else}
-			{if $isUserLoggedIn}
-				{capture assign="newSubmission"}<a href="{url page="submission" op="wizard"}">{translate key="about.onlineSubmissions.newSubmission"}</a>{/capture}
-				{capture assign="viewSubmissions"}<a href="{url page="submissions"}">{translate key="about.onlineSubmissions.viewSubmissions"}</a>{/capture}
-					{translate key="about.onlineSubmissions.submissionActions" newSubmission=$newSubmission viewSubmissions=$viewSubmissions}
-			{else}
-				{capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
-				{capture assign="register"}<a href="{url page="user" op="register"}">{translate key="about.onlineSubmissions.register"}</a>{/capture}
-					{translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
-			{/if}
+			{capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
+			{capture assign="register"}<a
+				href="{url page="user" op="register"}">{translate key="about.onlineSubmissions.register"}</a>{/capture}
+			<div class="alert alert-info">
+				{translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
+			</div>
 		{/if}
 	</div>
 
+	{* Submission Checklist *}
 	{if $submissionChecklist}
 		<div class="submission_checklist">
-			<h2>
+			<h2 class="font-bold text-lg mb-3">
 				{translate key="about.submissionPreparationChecklist"}
 				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission/submissionChecklist" sectionTitleKey="about.submissionPreparationChecklist"}
 			</h2>
 			{translate key="about.submissionPreparationChecklist.description"}
+			{* <div class="bg-white p-4 m-4"> *}
 			<ul>
 				{foreach from=$submissionChecklist item=checklistItem}
 					<li>
@@ -49,9 +60,12 @@
 					</li>
 				{/foreach}
 			</ul>
+			{* </div> *}
 		</div>
 	{/if}
+	{* End *}
 
+	{* Author Guidelines *}
 	{if $currentContext->getLocalizedData('authorGuidelines')}
 	<div class="author_guidelines" id="authorGuidelines">
 		<h2>
@@ -61,8 +75,9 @@
 		{$currentContext->getLocalizedData('authorGuidelines')}
 	</div>
 	{/if}
+	{* End *}
 
-	{foreach from=$sections item="section"}
+	{* {foreach from=$sections item="section"}
 		{if $section->getLocalizedPolicy()}
 			<div class="section_policy">
 				<h2>{$section->getLocalizedTitle()|escape}</h2>
@@ -95,7 +110,7 @@
 		</h2>
 		{$currentContext->getLocalizedData('privacyStatement')}
 	</div>
-	{/if}
+	{/if} *}
 
 </div><!-- .page -->
 

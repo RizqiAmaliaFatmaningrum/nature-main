@@ -3,7 +3,7 @@
   array (
     'en_US' => '<div class="flex">
 <div class="w-30 h-20 bg-[#DAE4E3] rounded-3xl flex p-4 m-2">
-<p class="text-lg m-auto color-[#00504F] font-bold">Sumbit Your Paper</p>
+<p class="text-lg m-auto text-[#00504F] font-bold">Sumbit Your Paper</p>
 <div class="w-10 h-10 bg-[#00504F] rounded-full flex "><button class="text-lg m-auto">➕</button></div>
 </div>
 </div>

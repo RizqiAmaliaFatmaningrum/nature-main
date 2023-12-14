@@ -19,7 +19,7 @@
 {if empty($isFullWidth)}
 	{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 	{if $sidebarCode}
-		<aside id="right" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+		<aside id="right" class="lg:w-1/4 xl:w-1/4 pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
 		
 		{* {include file="frontend/pages/userLogin.tpl"} *}
 

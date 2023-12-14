@@ -1,27 +1,26 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-08 03:34:26
+/* Smarty version 4.3.1, created on 2023-12-13 10:02:56
   from 'app:frontendcomponentsfooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_657280b2cdec14_23677941',
+  'unifunc' => 'content_6579734003fa22_57636384',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dffb64063bb972c37e05619a2ccd9d0ea7473ac' => 
     array (
       0 => 'app:frontendcomponentsfooter.tpl',
-      1 => 1701998117,
+      1 => 1702458174,
       2 => 'app',
     ),
   ),
   'includes' => 
   array (
-    'app:frontend/pages/userLogin.tpl' => 1,
   ),
 ),false)) {
-function content_657280b2cdec14_23677941 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6579734003fa22_57636384 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 </main><!-- pkp_structure_main -->
 
@@ -31,12 +30,10 @@ function content_657280b2cdec14_23677941 (Smarty_Internal_Template $_smarty_tpl)
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['call_hook'][0], array( array('name'=>"Templates::Common::Sidebar"),$_smarty_tpl ) );
 $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 	<?php if ($_smarty_tpl->tpl_vars['sidebarCode']->value) {?>
-		<aside id="right" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.sidebar"),$_smarty_tpl ) ) ));?>
+		<aside id="right" class="lg:w-1/4 xl:w-1/4 pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.sidebar"),$_smarty_tpl ) ) ));?>
 ">
 		
-		<?php $_smarty_tpl->_subTemplateRender("app:frontend/pages/userLogin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
+		
 		<?php echo $_smarty_tpl->tpl_vars['sidebarCode']->value;?>
 
 

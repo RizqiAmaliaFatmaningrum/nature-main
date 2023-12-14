@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-08 04:37:49
+/* Smarty version 4.3.1, created on 2023-12-09 08:58:12
   from 'app:frontendobjectsarticle_details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65728f8d36f550_41567001',
+  'unifunc' => 'content_65741e147ae464_13218762',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'addd65021fadf964339ab08cd1aa93ba59b14e9c' => 
     array (
       0 => 'app:frontendobjectsarticle_details.tpl',
-      1 => 1701137664,
+      1 => 1702108673,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/objects/galley_link.tpl' => 2,
   ),
 ),false)) {
-function content_65728f8d36f550_41567001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65741e147ae464_13218762 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('heading', "h3");
@@ -64,6 +64,7 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 				<section class="item authors">
 					<h2 class="pkp_screen_reader"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"article.authors"),$_smarty_tpl ) );?>
 </h2>
+					<div class="border shadow-lg p-5">
 					<ul class="authors">
 						<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['publication']->value->getData('authors'), 'author');
@@ -103,6 +104,7 @@ $_smarty_tpl->tpl_vars['author']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					</ul>
+					</div>
 				</section>
 			<?php }?>
 
@@ -148,8 +150,10 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 						<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"semicolon",'label'=>$_smarty_tpl->tpl_vars['translatedKeywords']->value),$_smarty_tpl ) );?>
 
 					</h2>
-					<span class="value">
-						<?php
+					</br>
+					<button class="bg-[#FF8E06] text-white font-bold p-2 rounded-2xl ">
+						<span class="value">
+							<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('keywords'), 'keyword', false, NULL, 'keywords', array (
   'last' => true,
   'iteration' => true,
@@ -161,19 +165,80 @@ $_smarty_tpl->tpl_vars['keyword']->do_else = false;
 $_smarty_tpl->tpl_vars['__smarty_foreach_keywords']->value['iteration']++;
 $_smarty_tpl->tpl_vars['__smarty_foreach_keywords']->value['last'] = $_smarty_tpl->tpl_vars['__smarty_foreach_keywords']->value['iteration'] === $_smarty_tpl->tpl_vars['__smarty_foreach_keywords']->value['total'];
 ?>
-							<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['keyword']->value ));
+								<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['keyword']->value ));
 if (!(isset($_smarty_tpl->tpl_vars['__smarty_foreach_keywords']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_keywords']->value['last'] : null)) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.commaListSeparator"),$_smarty_tpl ) );
 }?>
-						<?php
+							<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-					</span>
+						</span>
+					</button>
 				</section>
 			<?php }?>
 
+			<button class="bg-[#006A68] text-white font-bold rounded-3xl">
+			<?php if ($_smarty_tpl->tpl_vars['publication']->value->getData('datePublished')) {?>
+				<div class="item published">
+					<section class="sub_item">
+						<h2 class="label">
+							<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submissions.published"),$_smarty_tpl ) );?>
+
+						</h2>
+						<div class="value">
+														<?php if ($_smarty_tpl->tpl_vars['firstPublication']->value->getID() === $_smarty_tpl->tpl_vars['publication']->value->getId()) {?>
+								<span><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['firstPublication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value);?>
+</span>
+															<?php } else { ?>
+								<span><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.updatedOn",'datePublished'=>smarty_modifier_date_format($_smarty_tpl->tpl_vars['firstPublication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value),'dateUpdated'=>smarty_modifier_date_format($_smarty_tpl->tpl_vars['publication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value)),$_smarty_tpl ) );?>
+</span>
+							<?php }?>
+						</div>
+					</section>
+					<?php if (count($_smarty_tpl->tpl_vars['article']->value->getPublishedPublications()) > 1) {?>
+						<section class="sub_item versions">
+							<h2 class="label">
+								<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.versions"),$_smarty_tpl ) );?>
+
+							</h2>
+							<ul class="value">
+								<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, array_reverse($_smarty_tpl->tpl_vars['article']->value->getPublishedPublications()), 'iPublication');
+$_smarty_tpl->tpl_vars['iPublication']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['iPublication']->value) {
+$_smarty_tpl->tpl_vars['iPublication']->do_else = false;
+?>
+									<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "name", null);
+echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"submission.versionIdentity",'datePublished'=>smarty_modifier_date_format($_smarty_tpl->tpl_vars['iPublication']->value->getData('datePublished'),$_smarty_tpl->tpl_vars['dateFormatShort']->value),'version'=>$_smarty_tpl->tpl_vars['iPublication']->value->getData('version')),$_smarty_tpl ) );
+$_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
+									<li>
+										<?php if ($_smarty_tpl->tpl_vars['iPublication']->value->getId() === $_smarty_tpl->tpl_vars['publication']->value->getId()) {?>
+											<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+
+										<?php } elseif ($_smarty_tpl->tpl_vars['iPublication']->value->getId() === $_smarty_tpl->tpl_vars['currentPublication']->value->getId()) {?>
+											<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"article",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['article']->value->getBestId()),$_smarty_tpl ) );?>
+"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</a>
+										<?php } else { ?>
+											<a
+												href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"article",'op'=>"view",'path'=>call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'to_array' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getBestId(),"version",$_smarty_tpl->tpl_vars['iPublication']->value->getId() ))),$_smarty_tpl ) );?>
+"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</a>
+										<?php }?>
+									</li>
+								<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+							</ul>
+						</section>
+					<?php }?>
+				</div>
+			<?php }?>
+			</button>
+
+
 						<?php if ($_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('abstract')) {?>
-				<section class="item abstract">
+				<section class="item abstract text-justify">
 					<h2 class="label"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"article.abstract"),$_smarty_tpl ) );?>
 </h2>
 					<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strip_unsafe_html' ][ 0 ], array( $_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('abstract') ));?>
@@ -344,6 +409,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</div>
 			<?php }?>
 
+			<button class="bg-[#006A68] text-white font-bold rounded-3xl">
 			<?php if ($_smarty_tpl->tpl_vars['publication']->value->getData('datePublished')) {?>
 				<div class="item published">
 					<section class="sub_item">
@@ -400,6 +466,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					<?php }?>
 				</div>
 			<?php }?>
+			</button>
 
 						<?php if ($_smarty_tpl->tpl_vars['citation']->value) {?>
 				<div class="item citation">

@@ -102,6 +102,7 @@
 			{if $publication->getData('authors')}
 				<section class="item authors">
 					<h2 class="pkp_screen_reader">{translate key="article.authors"}</h2>
+					<div class="border shadow-lg p-5">
 					<ul class="authors">
 						{foreach from=$publication->getData('authors') item=author}
 							<li>
@@ -127,6 +128,7 @@
 							</li>
 						{/foreach}
 					</ul>
+					</div>
 				</section>
 			{/if}
 
@@ -159,17 +161,64 @@
 						{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
 						{translate key="semicolon" label=$translatedKeywords}
 					</h2>
-					<span class="value">
-						{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}
-							{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}
-						{/foreach}
-					</span>
+					</br>
+					<button class="bg-[#FF8E06] text-white font-bold p-2 rounded-2xl ">
+						<span class="value">
+							{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}
+								{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}
+							{/foreach}
+						</span>
+					</button>
 				</section>
 			{/if}
 
+			<button class="bg-[#006A68] text-white font-bold rounded-3xl">
+			{if $publication->getData('datePublished')}
+				<div class="item published">
+					<section class="sub_item">
+						<h2 class="label">
+							{translate key="submissions.published"}
+						</h2>
+						<div class="value">
+							{* If this is the original version *}
+							{if $firstPublication->getID() === $publication->getId()}
+								<span>{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}</span>
+								{* If this is an updated version *}
+							{else}
+								<span>{translate key="submission.updatedOn" datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatShort dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}</span>
+							{/if}
+						</div>
+					</section>
+					{if count($article->getPublishedPublications()) > 1}
+						<section class="sub_item versions">
+							<h2 class="label">
+								{translate key="submission.versions"}
+							</h2>
+							<ul class="value">
+								{foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
+									{capture assign="name"}{translate key="submission.versionIdentity" datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort version=$iPublication->getData('version')}{/capture}
+									<li>
+										{if $iPublication->getId() === $publication->getId()}
+											{$name}
+										{elseif $iPublication->getId() === $currentPublication->getId()}
+											<a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
+										{else}
+											<a
+												href="{url page="article" op="view" path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
+										{/if}
+									</li>
+								{/foreach}
+							</ul>
+						</section>
+					{/if}
+				</div>
+			{/if}
+			</button>
+
+
 			{* Abstract *}
 			{if $publication->getLocalizedData('abstract')}
-				<section class="item abstract">
+				<section class="item abstract text-justify">
 					<h2 class="label">{translate key="article.abstract"}</h2>
 					{$publication->getLocalizedData('abstract')|strip_unsafe_html}
 				</section>
@@ -285,6 +334,7 @@
 				</div>
 			{/if}
 
+			<button class="bg-[#006A68] text-white font-bold rounded-3xl">
 			{if $publication->getData('datePublished')}
 				<div class="item published">
 					<section class="sub_item">
@@ -325,6 +375,7 @@
 					{/if}
 				</div>
 			{/if}
+			</button>
 
 			{* How to cite *}
 			{if $citation}
