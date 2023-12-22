@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-07 02:28:07
+/* Smarty version 4.3.1, created on 2023-12-06 08:02:00
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65711fa7b96f85_50057693',
+  'unifunc' => 'content_65701c68e79a78_52842719',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701852266,
+      1 => 1701845418,
       2 => 'app',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_65711fa7b96f85_50057693 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\nature-main1\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_65701c68e79a78_52842719 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 
 <?php $_smarty_tpl->_assignInScope('showingLogo', true);
@@ -116,7 +116,7 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 				</nav>
 							</div>	
 
-			<div class="container mx-auto shadow bg-green">
+			<div class="container mx-auto">
 					<?php if ($_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {?>
 						<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
 " class="is_img">
@@ -141,10 +141,15 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 						</a>
 					<?php }?>
 
-					<div class="bg-[#00504F] text-white p-10 z-10">
-						<h3 class="text-3xl font-bold">About Jurnal</h3>
-							<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
-					</div>
+					<div class="bg-[#00504F] text-white py-10 px-40 z-10">
+						<h3 class="text-3xl font-bold mb-3">About Juornal</h3>
+						<?php if ($_smarty_tpl->tpl_vars['journalDescription']->value) {?>
+							<div class="text-justify">
+								<?php echo $_smarty_tpl->tpl_vars['journalDescription']->value;?>
+
+							</div>
+						<?php }?>
+												</div>
 					
 
 			</div>
@@ -169,8 +174,8 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 							<?php }?>
 		</div>
 
-		
-						<div class="bg-[#F4FEFD] pkp_structure_content container">
+
+		<div class="bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
 
 			<aside id="left" class="col-md-3"> </aside>
 			<main class="pkp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">

@@ -1,19 +1,11 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 4.3.1, created on 2023-12-07 08:37:00
-=======
 /* Smarty version 4.3.1, created on 2023-11-29 03:51:57
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   from 'app:controllersgridgridCellContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-<<<<<<< HEAD
-  'unifunc' => 'content_6571761c6099d4_57641276',
-=======
   'unifunc' => 'content_6566a74d779cd0_29134308',
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -29,11 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:linkAction/linkAction.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_6571761c6099d4_57641276 (Smarty_Internal_Template $_smarty_tpl) {
-=======
 function content_6566a74d779cd0_29134308 (Smarty_Internal_Template $_smarty_tpl) {
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 ?>
 

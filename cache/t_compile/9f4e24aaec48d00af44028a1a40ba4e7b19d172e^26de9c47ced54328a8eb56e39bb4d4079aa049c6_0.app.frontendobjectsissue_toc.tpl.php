@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-07 08:42:11
+/* Smarty version 4.3.1, created on 2023-12-02 09:52:04
   from 'app:frontendobjectsissue_toc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65717753881408_86390557',
+  'unifunc' => 'content_656af034a00c15_80913327',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26de9c47ced54328a8eb56e39bb4d4079aa049c6' => 
     array (
       0 => 'app:frontendobjectsissue_toc.tpl',
-      1 => 1701934818,
+      1 => 1701507104,
       2 => 'app',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/objects/article_summary.tpl' => 1,
   ),
 ),false)) {
-function content_65717753881408_86390557 (Smarty_Internal_Template $_smarty_tpl) {
+function content_656af034a00c15_80913327 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('heading', "h2");
 }
@@ -36,7 +36,8 @@ if ($_smarty_tpl->tpl_vars['heading']->value == "h3") {?>
 	<?php $_smarty_tpl->_assignInScope('articleHeading', "h6");
 }?>
 
-<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
+<div class="">
+
 
 		<?php if (!$_smarty_tpl->tpl_vars['issue']->value->getPublished()) {?>
 		<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('type'=>"warning",'messageKey'=>"editor.issues.preview"), 0, false);
@@ -118,37 +119,41 @@ $_smarty_tpl->tpl_vars['section']->do_else = false;
 		<div class="section">
 		<?php if ($_smarty_tpl->tpl_vars['section']->value['articles']) {?>
 			<?php if ($_smarty_tpl->tpl_vars['section']->value['title']) {?>
-				<<?php echo $_smarty_tpl->tpl_vars['heading']->value;?>
->
-					<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['section']->value['title'] ));?>
+				<div class="flex justify-center items-center h-32 text-2xl text-center font-bold text-[#00504F] bg-[url('../../../img/Union.png')] bg-no-repeat bg-center my-5">
+													<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['section']->value['title'] ));?>
 
-				</<?php echo $_smarty_tpl->tpl_vars['heading']->value;?>
->
+												</div>
 			<?php }?>
+			
 			<ul class="cmp_article_list articles">
-				<?php
+				<div class="grid grid-cols-2 gap-2">
+					<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['section']->value['articles'], 'article');
 $_smarty_tpl->tpl_vars['article']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['article']->value) {
 $_smarty_tpl->tpl_vars['article']->do_else = false;
 ?>
-					<li>
-						<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('heading'=>$_smarty_tpl->tpl_vars['articleHeading']->value), 0, true);
+						<li>
+						<div class="justify-center w-50 bg-white rounded-3xl p-4 m-2 shadow-lg">
+							<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('heading'=>$_smarty_tpl->tpl_vars['articleHeading']->value), 0, true);
 ?>
-					</li>
-				<?php
+						</div>
+						<div>
+						</div>
+						</li>
+					<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				</div>
 			</ul>
+			
 		<?php }?>
-		</div>
 	<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div><!-- .sections -->
+
 </div>
 
-<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
-</div>
 <?php }
 }

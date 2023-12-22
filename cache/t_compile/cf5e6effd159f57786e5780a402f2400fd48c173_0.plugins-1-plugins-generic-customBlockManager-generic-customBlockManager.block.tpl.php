@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-07 02:28:10
+/* Smarty version 4.3.1, created on 2023-11-28 03:23:35
   from 'plugins-1-plugins-generic-customBlockManager-generic-customBlockManager:block.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65711faa79a938_47849256',
+  'unifunc' => 'content_65654f27e7c502_13382911',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65711faa79a938_47849256 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65654f27e7c502_13382911 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="pkp_block block_custom" id="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['customBlockId']->value ));?>
 ">
 	<h2 class="title<?php if (!$_smarty_tpl->tpl_vars['showName']->value) {?> pkp_screen_reader<?php }?>"><?php echo $_smarty_tpl->tpl_vars['customBlockTitle']->value;?>

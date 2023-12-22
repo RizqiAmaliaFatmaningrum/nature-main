@@ -1,19 +1,11 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 4.3.1, created on 2023-12-07 08:37:01
-=======
 /* Smarty version 4.3.1, created on 2023-11-28 03:50:56
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   from 'app:formformButtons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-<<<<<<< HEAD
-  'unifunc' => 'content_6571761d8fdfa0_63598995',
-=======
   'unifunc' => 'content_6565559025f890_96553289',
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -31,24 +23,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:linkAction/buttonRedirectLinkAction.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_6571761d8fdfa0_63598995 (Smarty_Internal_Template $_smarty_tpl) {
-$_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['fbvFormSection'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['fbvFormSection'][0][0] : null;
-if (!is_callable(array($_block_plugin3, 'smartyFBVFormSection'))) {
-=======
 function content_6565559025f890_96553289 (Smarty_Internal_Template $_smarty_tpl) {
 $_block_plugin6 = isset($_smarty_tpl->smarty->registered_plugins['block']['fbvFormSection'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['fbvFormSection'][0][0] : null;
 if (!is_callable(array($_block_plugin6, 'smartyFBVFormSection'))) {
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
 throw new SmartyException('block tag \'fbvFormSection\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('fbvFormSection', array('class'=>"formButtons form_buttons"));
 $_block_repeat=true;
-<<<<<<< HEAD
-echo $_block_plugin3->smartyFBVFormSection(array('class'=>"formButtons form_buttons"), null, $_smarty_tpl, $_block_repeat);
-=======
 echo $_block_plugin6->smartyFBVFormSection(array('class'=>"formButtons form_buttons"), null, $_smarty_tpl, $_block_repeat);
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
 while ($_block_repeat) {
 ob_start();?>
 
@@ -89,11 +71,7 @@ echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUG
 </a>
 	<?php }
 $_block_repeat=false;
-<<<<<<< HEAD
-echo $_block_plugin3->smartyFBVFormSection(array('class'=>"formButtons form_buttons"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
-=======
 echo $_block_plugin6->smartyFBVFormSection(array('class'=>"formButtons form_buttons"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }

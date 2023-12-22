@@ -13,10 +13,11 @@
 
 <div class="page page_editorial_team">
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.editorialTeam"}
-	<h1>
+	<h1 class="font-bold text-2xl">
 		{translate key="about.editorialTeam"}
 	</h1>
-	{include file="frontend/components/editLink.tpl" page="management" op="settings" path="context" anchor="masthead" sectionTitleKey="about.editorialTeam"}
+	<hr class="my-5 w-full border-t-2 border-[#00504F]">
+	{* {include file="frontend/components/editLink.tpl" page="management" op="settings" path="context" anchor="masthead" sectionTitleKey="about.editorialTeam"} *}
 	{$currentContext->getLocalizedData('editorialTeam')}
 </div><!-- .page -->
 

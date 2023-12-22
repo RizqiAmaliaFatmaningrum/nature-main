@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
+body {
     font-family: 'Inter', sans-serif;
-} */
+}
 
 #login-password::placeholder {
     padding: 2rem; /* Sesuaikan nilai padding sesuai kebutuhan Anda */
+}
+
+.navbar {
+    display: none; /* Atur agar elemen awalnya disembunyikan */
+  }
+  
+.navbar.active {
+    display: block; /* Atur agar elemen tampil saat memiliki kelas 'active' */
 }

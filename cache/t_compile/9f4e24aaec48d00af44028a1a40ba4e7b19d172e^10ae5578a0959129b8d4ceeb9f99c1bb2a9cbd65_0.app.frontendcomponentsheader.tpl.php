@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-07 08:42:11
+/* Smarty version 4.3.1, created on 2023-12-06 07:50:20
   from 'app:frontendcomponentsheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_657177531da060_32107997',
+  'unifunc' => 'content_657019ace69df8_06417360',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.tpl',
-      1 => 1701934818,
+      1 => 1701845418,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_657177531da060_32107997 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657019ace69df8_06417360 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 
@@ -81,42 +81,48 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 			<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 			
 			<div class="container mx-auto">
-								<nav class="p-5 bg-[#F4FEFD] shadow flex items-center justify-between">
-					<div class="flex items-center">
-						<span class="text-2xl font-bold cursor-pointer">
+				<div class="p-5 bg-[#F4FEFD] shadow lg:flex lg:items-center lg:justify-between">
+					<div class="flex justify-between items-center">
+						<span class="text-2xl font-bold text-dark hover:text-[#00504F] cursor-pointer">
 							<img class="h-10 inline" src="">
 							<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
 " class="is_text"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderTitle']->value ));?>
 </a>
 						</span>
+
+												<button id="hamburger">
+							<span class="text-3xl cursor-pointer mx-2 lg:hidden block">
+								<ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+							</span>
+						</button>
 					</div>
 
 					<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "primaryMenu", null);?>
 						<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['load_menu'][0], array( array('name'=>"primary",'id'=>"main-navigation",'ulClass'=>"nav navbar-nav"),$_smarty_tpl ) );?>
 
 					<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
+					<nav id="navbar" class="navbar lg:flex lg:items-center lg:justify-between">
+						<?php if (!empty(trim($_smarty_tpl->tpl_vars['primaryMenu']->value)) || $_smarty_tpl->tpl_vars['currentContext']->value) {?>
+							<!-- Primary navigation menu for the current application -->
+							<div class="font-bold">
+							<?php echo $_smarty_tpl->tpl_vars['primaryMenu']->value;?>
 
-					<?php if (!empty(trim($_smarty_tpl->tpl_vars['primaryMenu']->value)) || $_smarty_tpl->tpl_vars['currentContext']->value) {?>
-						<!-- Primary navigation menu for the current application -->
-						<div class="flex items-center font-bold">
-						  <?php echo $_smarty_tpl->tpl_vars['primaryMenu']->value;?>
+							</div>
+						<?php }?>
 
-						  
-						  <!-- Search form -->
-						  						</div>
-					<?php }?>
-
-					<nav aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.user"),$_smarty_tpl ) ) ));?>
+						<nav aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.user"),$_smarty_tpl ) ) ));?>
 " class="md:col-12 pr-0" >
-							<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl ml-4">
-								<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['load_menu'][0], array( array('name'=>"user",'id'=>"navigationUser",'ulClass'=>"nav nav-pills tab-list pull-right"),$_smarty_tpl ) );?>
+							<button class="bg-[#FF8E06] text-white font-bold my-0 py-2 px-4 rounded-3xl ml-4">
+								<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['load_menu'][0], array( array('name'=>"user",'id'=>"navigationUser",'ulClass'=>"nav nav-pills tab-list pull-right flex"),$_smarty_tpl ) );?>
 
 							</button>
+						</nav>
 					</nav>
-				</nav>
-							</div>	
+				</div>
+			</div>	
 
-			<div class="container mx-auto shadow bg-green">
+
+			<div class="container mx-auto">
 					<?php if ($_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {?>
 						<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
 " class="is_img">
@@ -141,10 +147,15 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 						</a>
 					<?php }?>
 
-					<div class="bg-[#00504F] text-white p-10 z-10">
-						<h3 class="text-3xl font-bold">About Jurnal</h3>
-							<p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping the landscape of various industries and aspects of our daily lives. The rapid advancements in machine learning algorithms and computational power have propelled AI into the forefront of technological innovation. From virtual personal assistants and recommendation systems to complex autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering unprecedented possibilities. However, with the promise of efficiency and convenience comes a set of ethical considerations and challenges. As we navigate this era of AI integration, striking a balance between innovation and responsible AI development becomes paramount, ensuring that the benefits of artificial intelligence are harnessed while mitigating potential risks and ethical dilemmas.</p>
-					</div>
+					<div class="bg-[#00504F] text-white py-10 px-40 z-10">
+						<h3 class="text-3xl font-bold mb-3">About Juornal</h3>
+						<?php if ($_smarty_tpl->tpl_vars['journalDescription']->value) {?>
+							<div class="text-justify">
+								<?php echo $_smarty_tpl->tpl_vars['journalDescription']->value;?>
+
+							</div>
+						<?php }?>
+												</div>
 					
 
 			</div>
@@ -155,25 +166,15 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 							
 				
 					</header><!-- .pkp_structure_head -->
-
-		<div>
-										<?php if ($_smarty_tpl->tpl_vars['currentContext']->value && $_smarty_tpl->tpl_vars['requestedPage']->value !== 'search') {?>
-								<div class="pkp_navigation_search_wrapper">
-									<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"search"),$_smarty_tpl ) );?>
-" class="pkp_search pkp_search_desktop">
-										<span class="fa fa-search" aria-hidden="true"></span>
-										<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.search"),$_smarty_tpl ) );?>
-
-									</a>
-								</div>
-							<?php }?>
-		</div>
-
 		
-						<div class="bg-[#F4FEFD] pkp_structure_content container">
+				
+		
 
-			<aside id="left" class="col-md-3"> </aside>
-			<main class="pkp_structure_main bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
+		<div class="lg:flex bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
+
+			<aside id="left" class="lg:w-1/4 xl:w-1/4 m-2 col-md-3"> 
+			</aside>
+			<main class="lg:w-1/2 xl:w-1/2 bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6" role="main">
 
 			
 			

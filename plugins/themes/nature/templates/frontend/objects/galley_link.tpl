@@ -60,30 +60,29 @@
 {/if}
 
 {* Don't be frightened. This is just a link *}
-<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-2xl ml-4">
-	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-	<path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-	</svg>
-	
-	<a class="{if $isSupplementary}obj_galley_link_supplementary{else}{/if} {$type|escape}{if $restricted} restricted{/if}" href="{url page=$page op="view" path=$path}"{if $labelledBy} aria-labelledby={$labelledBy}{/if}>
+<button class="relative bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-2xl ml-4">
+    <a class="flex items-center {if $isSupplementary}obj_galley_link_supplementary{else}{/if} {$type|escape}{if $restricted} restricted{/if}" href="{url page=$page op='view' path=$path}" {if $labelledBy}aria-labelledby={$labelledBy}{/if}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+        </svg>
+        {* Add some screen reader text to indicate if a galley is restricted *}
+        {if $restricted}
+            <span class="pkp_screen_reader">
+                {if $purchaseArticleEnabled}
+                    {translate key="reader.subscriptionOrFeeAccess"}
+                {else}
+                    {translate key="reader.subscriptionAccess"}
+                {/if}
+            </span>
+        {/if}
 
-		{* Add some screen reader text to indicate if a galley is restricted *}
-		{if $restricted}
-			<span class="pkp_screen_reader">
-				{if $purchaseArticleEnabled}
-					{translate key="reader.subscriptionOrFeeAccess"}
-				{else}
-					{translate key="reader.subscriptionAccess"}
-				{/if}
-			</span>
-		{/if}
+        {$galley->getGalleyLabel()|escape}
 
-		{$galley->getGalleyLabel()|escape}
-
-		{if $restricted && $purchaseFee && $purchaseCurrency}
-			<span class="purchase_cost">
-				{translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}
-			</span>
-		{/if}
-	</a>
+        {if $restricted && $purchaseFee && $purchaseCurrency}
+            <span class="purchase_cost">
+                {translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}
+            </span>
+        {/if}
+    </a>
 </button>
+

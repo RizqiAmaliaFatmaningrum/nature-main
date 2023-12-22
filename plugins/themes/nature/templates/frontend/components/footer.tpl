@@ -19,8 +19,20 @@
 {if empty($isFullWidth)}
 	{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 	{if $sidebarCode}
-		<aside id="right" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
-			{$sidebarCode}
+		<aside id="right" class="lg:w-1/4 xl:w-1/4 pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+		
+		{* {include file="frontend/pages/userLogin.tpl"} *}
+
+		{$sidebarCode}
+
+		{* Additional Homepage Content additional_content*}
+		{if $additionalHomeContent}
+			<div class="">
+				{* <div class="flex-2 bg-[#00504F] rounded-3xl p-4 m-2"> *}
+				{$additionalHomeContent}
+				{* </div> *}
+			</div>
+		{/if}
 		</aside><!-- pkp_sidebar.left -->
 	{/if}
 {/if}

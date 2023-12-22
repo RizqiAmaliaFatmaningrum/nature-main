@@ -1,0 +1,105 @@
+aside#left {
+  padding-left: 15px !important;
+  padding-right: 0 !important;
+}
+
+aside#right {
+  padding-right: 15px !important;
+  padding-left: 0 !important;
+}
+
+.pull-right,
+.header_view .download {
+  float: left !important;
+}
+
+.pr-0,
+.px-0 {
+  padding-left: 0 !important;
+}
+
+.pl-0,
+.px-0 {
+  padding-right: 0 !important;
+}
+
+.text-right {
+  text-align: left !important;
+}
+
+.text-left {
+  text-align: right !important;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+
+@media(min-width: 992px) {
+  .pull-md-right {
+    float: left;
+  }
+}
+
+.cover {
+  padding-left: 15px !important;
+}
+
+.article-summary a.galley-link,
+ul.galleys_links li a {
+  margin-left: 10px !important;
+}
+
+
+.test {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .text-sm-left {
+    text-align: right !important;
+  }
+}
+
+.article-summary .doi_link {
+  background: url(../images/DOI_logo.svg) no-repeat center right;
+  padding: 5px 19px 5px 0px;
+}
+
+.pkp_page_article .article_title .doi {
+  background: url(../images/DOI_logo.svg) no-repeat top right;
+  padding: 0px 20px 5px 0px;
+}
+
+.gsc_rsb_sth {
+  text-align: center;
+}
+
+.prev_next {
+  margin-left: 1rem;
+}
+
+span.previous-icon::after {
+  content: '→';
+}
+
+span.next-icon::after {
+  content: '←';
+}
+
+.fa-chevron-right:before {
+  content: "\f053";
+}
+
+.fa-chevron-left:before {
+  content: "\f054";
+}
+
+.glyphicon-chevron-right:before {
+  content: "\e079";
+}
+
+.glyphicon-chevron-left:before {
+  content: "\e080";
+}

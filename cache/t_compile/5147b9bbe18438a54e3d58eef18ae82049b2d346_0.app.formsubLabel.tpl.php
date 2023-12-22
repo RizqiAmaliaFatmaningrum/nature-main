@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-28 03:50:55
+/* Smarty version 4.3.1, created on 2023-12-08 08:36:45
   from 'app:formsubLabel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6565558fa4d4d0_54870622',
+  'unifunc' => 'content_6572c78d8f8f42_08869263',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6565558fa4d4d0_54870622 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6572c78d8f8f42_08869263 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['FBV_uniqId']->value) {?>
 	<?php if ($_smarty_tpl->tpl_vars['FBV_multilingual']->value) {?>
 		<?php $_smarty_tpl->_assignInScope('forElement', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'concat' ][ 0 ], array( $_smarty_tpl->tpl_vars['FBV_id']->value,"-",$_smarty_tpl->tpl_vars['formLocale']->value,"-",$_smarty_tpl->tpl_vars['FBV_uniqId']->value )));?>

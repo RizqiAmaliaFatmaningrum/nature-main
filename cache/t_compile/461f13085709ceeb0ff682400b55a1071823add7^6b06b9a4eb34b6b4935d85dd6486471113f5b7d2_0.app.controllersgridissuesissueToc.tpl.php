@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-02 01:50:00
+/* Smarty version 4.3.1, created on 2023-12-11 08:37:02
   from 'app:controllersgridissuesissueToc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656a7f38a11702_64183699',
+  'unifunc' => 'content_6576bc1e009dd6_01781332',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_656a7f38a11702_64183699 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6576bc1e009dd6_01781332 (Smarty_Internal_Template $_smarty_tpl) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['help'][0], array( array('file'=>"issue-management",'section'=>"edit-issue-toc",'class'=>"pkp_help_tab"),$_smarty_tpl ) );?>
 
 <?php echo '<script'; ?>

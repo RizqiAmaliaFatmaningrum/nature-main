@@ -30,7 +30,8 @@
 	{assign var="articleHeading" value="h6"}
 {/if}
 
-<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
+<div class="">
+
 
 	{* Indicate if this is only a preview *}
 	{if !$issue->getPublished()}
@@ -108,22 +109,32 @@
 		<div class="section">
 		{if $section.articles}
 			{if $section.title}
-				<{$heading}>
+				<div class="flex justify-center items-center h-32 text-2xl text-center font-bold text-[#00504F] bg-[url('../../../img/Union.png')] bg-no-repeat bg-center my-5">
+				{* <div class="h-32"> *}
+				{* <{$heading}> *}
 					{$section.title|escape}
-				</{$heading}>
+				{* </{$heading}> *}
+				{* </div> *}
+				</div>
 			{/if}
+			
 			<ul class="cmp_article_list articles">
-				{foreach from=$section.articles item=article}
-					<li>
-						{include file="frontend/objects/article_summary.tpl" heading=$articleHeading}
-					</li>
-				{/foreach}
+				<div class="grid grid-cols-2 gap-2">
+					{foreach from=$section.articles item=article}
+						<li>
+						<div class="justify-center w-50 bg-white rounded-3xl p-4 m-2 shadow-lg">
+							{include file="frontend/objects/article_summary.tpl" heading=$articleHeading}
+						</div>
+						<div>
+						</div>
+						</li>
+					{/foreach}
+				</div>
 			</ul>
+			
 		{/if}
-		</div>
 	{/foreach}
 	</div><!-- .sections -->
+
 </div>
 
-<div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 ">
-</div>

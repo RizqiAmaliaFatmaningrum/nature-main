@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-05 03:43:42
+/* Smarty version 4.3.1, created on 2023-12-13 02:44:14
   from 'app:submissionformstep1.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656e8e5e9936d3_02013881',
+  'unifunc' => 'content_65790c6e64b562_87385436',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'core:submission/form/step1.tpl' => 1,
   ),
 ),false)) {
-function content_656e8e5e9936d3_02013881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65790c6e64b562_87385436 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 if (smarty_modifier_count($_smarty_tpl->tpl_vars['sectionOptions']->value) == 1) {?>
 	 <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"author.submit.notAccepting"),$_smarty_tpl ) );?>

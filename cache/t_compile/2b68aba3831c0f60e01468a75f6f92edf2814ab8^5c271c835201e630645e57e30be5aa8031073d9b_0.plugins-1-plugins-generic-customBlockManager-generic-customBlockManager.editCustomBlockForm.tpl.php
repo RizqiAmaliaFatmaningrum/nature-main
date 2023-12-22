@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-01 03:53:41
+/* Smarty version 4.3.1, created on 2023-12-08 08:36:45
   from 'plugins-1-plugins-generic-customBlockManager-generic-customBlockManager:editCustomBlockForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65694ab55461b5_29499638',
+  'unifunc' => 'content_6572c78d7b66f5_04715792',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65694ab55461b5_29499638 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6572c78d7b66f5_04715792 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 	$(function() {

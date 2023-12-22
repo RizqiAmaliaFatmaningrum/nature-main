@@ -1,19 +1,11 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 4.3.1, created on 2023-12-07 08:37:00
-=======
 /* Smarty version 4.3.1, created on 2023-11-29 03:51:56
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   from 'app:controllersgridcommoncellradioButtonCell.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-<<<<<<< HEAD
-  'unifunc' => 'content_6571761c556090_08449804',
-=======
   'unifunc' => 'content_6566a74c46d1b1_78229159',
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -29,11 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:linkAction/buttonGenericLinkAction.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_6571761c556090_08449804 (Smarty_Internal_Template $_smarty_tpl) {
-=======
 function content_6566a74c46d1b1_78229159 (Smarty_Internal_Template $_smarty_tpl) {
->>>>>>> 511c29197c32fda98855b609b8c73cf71d0ed8b2
 $_smarty_tpl->_assignInScope('cellId', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'concat' ][ 0 ], array( "cell-",$_smarty_tpl->tpl_vars['id']->value )));?>
 <span id="<?php echo $_smarty_tpl->tpl_vars['cellId']->value;?>
 ">

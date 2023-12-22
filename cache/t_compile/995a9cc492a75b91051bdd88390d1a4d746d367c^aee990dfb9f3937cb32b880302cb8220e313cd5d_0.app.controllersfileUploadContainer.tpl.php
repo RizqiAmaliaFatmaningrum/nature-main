@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-02 01:50:05
+/* Smarty version 4.3.1, created on 2023-12-11 08:37:09
   from 'app:controllersfileUploadContainer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656a7f3d9a4966_96017138',
+  'unifunc' => 'content_6576bc251a50b6_55858884',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:controllers/notification/inPlaceNotificationContent.tpl' => 1,
   ),
 ),false)) {
-function content_656a7f3d9a4966_96017138 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6576bc251a50b6_55858884 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['stringDragFile']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('stringDragFile', "common.upload.dragFile");
 }

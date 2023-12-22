@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-29 08:27:45
+/* Smarty version 4.3.1, created on 2023-12-13 02:58:00
   from 'app:frontendpagesannouncements.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6566e7f1e33284_87361511',
+  'unifunc' => 'content_65790fa8bca782_36645938',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '940e52f31d2f469df7aa1cf641b18f25e2302700' => 
     array (
       0 => 'app:frontendpagesannouncements.tpl',
-      1 => 1701137664,
+      1 => 1702428492,
       2 => 'app',
     ),
   ),
@@ -25,17 +25,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6566e7f1e33284_87361511 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65790fa8bca782_36645938 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"announcement.announcements"), 0, false);
 ?>
 
 <div class="page page_announcements">
 	<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/breadcrumbs.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('currentTitleKey'=>"announcement.announcements"), 0, false);
 ?>
-	<h1>
+	<h1 class="font-bold text-2xl">
 		<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"announcement.announcements"),$_smarty_tpl ) );?>
 
 	</h1>
+	<hr class="my-5 w-full border-t-2 border-[#00504F]">
 	<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/editLink.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('page'=>"management",'op'=>"settings",'path'=>"announcements",'anchor'=>"announcements",'sectionTitleKey'=>"announcement.announcements"), 0, false);
 ?>
 

@@ -13,9 +13,10 @@
 
 <div class="page page_announcements">
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="announcement.announcements"}
-	<h1>
+	<h1 class="font-bold text-2xl">
 		{translate key="announcement.announcements"}
 	</h1>
+	<hr class="my-5 w-full border-t-2 border-[#00504F]">
 	{include file="frontend/components/editLink.tpl" page="management" op="settings" path="announcements" anchor="announcements" sectionTitleKey="announcement.announcements"}
 
 	{$announcementsIntroduction}

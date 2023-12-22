@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-07 02:28:08
+/* Smarty version 4.3.1, created on 2023-12-04 01:41:30
   from 'app:frontendcomponentsbreadcrumbs_article.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65711fa86855c7_28516677',
+  'unifunc' => 'content_656d203aad1489_07183810',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8ab55ccd82738cda0ab6199695edc24e6c72197d' => 
     array (
       0 => 'app:frontendcomponentsbreadcrumbs_article.tpl',
-      1 => 1701852245,
+      1 => 1701137664,
       2 => 'app',
     ),
   ),
@@ -20,11 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65711fa86855c7_28516677 (Smarty_Internal_Template $_smarty_tpl) {
+function content_656d203aad1489_07183810 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <nav class="cmp_breadcrumbs" role="navigation" aria-label="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.breadcrumbLabel"),$_smarty_tpl ) );?>
 ">
 	<ol>
+	<div class="bg-[#006A6829] text-[#00504F] rounded-2xl h-10 p-2 relative">
 		<li>
 			<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"index",'router'=>(defined('ROUTE_PAGE') ? constant('ROUTE_PAGE') : null)),$_smarty_tpl ) );?>
 ">
@@ -54,8 +55,8 @@ function content_65711fa86855c7_28516677 (Smarty_Internal_Template $_smarty_tpl)
 </span>
 			</li>
 		<?php }?>
-		<li class="current" aria-current="page">
-			<span aria-current="page">
+		<li class="current bg-[#00504F] rounded-r-2xl h-10 p-2 absolute top-0" aria-current="page">
+			<span aria-current="page" class="text-white whitespace-nowrap overflow-hidden">
 				<?php if ($_smarty_tpl->tpl_vars['currentTitleKey']->value) {?>
 					<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>$_smarty_tpl->tpl_vars['currentTitleKey']->value),$_smarty_tpl ) );?>
 
@@ -65,6 +66,7 @@ function content_65711fa86855c7_28516677 (Smarty_Internal_Template $_smarty_tpl)
 				<?php }?>
 			</span>
 		</li>
+	</div>
 	</ol>
 </nav>
 <?php }
