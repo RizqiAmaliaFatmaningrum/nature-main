@@ -14,17 +14,17 @@
  * @uses $currentTitleKey string Translation key for title of current page.
  *}
 
-<nav class="cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol>
-		<div class="bg-[#006A6829] text-[#00504F] rounded-2xl h-10 p-2 relative">
-			<li>
-				<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
-					{translate key="common.homepageNavigationLabel"}
+<nav class="inline-block" role="navigation" aria-label="{translate key='navigation.breadcrumbLabel'}">
+	<ol class="pkp_unstyled_list py-2 pl-0 leading-8 text-sm">
+		<div class="bg-[#006A6829] text-[#00504F] rounded-2xl h-10 p-2 relative flex items-center">
+			<li class="inline-block">
+				<a href="{url page='index' router=$smarty.const.ROUTE_PAGE}" class="inline-block text-decoration-none">
+					{translate key='common.homepageNavigationLabel'}
 				</a>
-				<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
+				<span class="separator text-light px-1">{translate key='navigation.breadcrumbSeparator'}</span>
 			</li>
-			<li>
-				<div class="current bg-[#00504F] rounded-r-2xl h-10 p-2 absolute top-0">
+			<li class="inline-block">
+				<div class="current bg-[#00504F] rounded-r-2xl h-10 p-2 absolute top-0 flex items-center">
 					<span aria-current="page" class="text-white whitespace-nowrap overflow-hidden">
 						{if $currentTitleKey}
 							{translate key=$currentTitleKey}
@@ -37,4 +37,5 @@
 		</div>
 	</ol>
 </nav>
+
 

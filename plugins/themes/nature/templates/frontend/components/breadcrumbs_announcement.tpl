@@ -13,22 +13,22 @@
 
 {* <div class="w-10 h-10 bg-[#006A68]"> *}
 	
-<nav class="cmp_breadcrumbs cmp_breadcrumbs_announcement" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-        <ol>
-            <div class="bg-[#006A6829] text-[#00504F] rounded-2xl h-10 p-2 relative">
-                <li>
-                    <a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
+<nav class="inline-block" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
+        <ol class="pkp_unstyled_list mb-12 py-2 pl-0 leading-8 text-sm">
+            <div class="bg-[#006A6829] text-[#00504F] rounded-2xl h-10 p-2 relative flex items-center">
+                <li class="inline-block">
+                    <a href="{url page="index" router=$smarty.const.ROUTE_PAGE}" class="inline-block text-decoration-none">
                         {translate key="common.homepageNavigationLabel"}
                     </a>
-                    <span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
+                    <span class="separator text-light px-2">{translate key="navigation.breadcrumbSeparator"}</span>
                 </li>
-                <li>
-                    <a href="{url page="announcement" router=$smarty.const.ROUTE_PAGE}">
+                <li class="inline-block">
+                    <a href="{url page="announcement" router=$smarty.const.ROUTE_PAGE}" class="inline-block text-decoration-none">
                         {translate key="announcement.announcements"}
                     </a>
-                    <span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
+                    <span class="separator text-light px-2">{translate key="navigation.breadcrumbSeparator"}</span>
                 </li>
-                <li>
+                <li class="inline-block">
                     <div class="current bg-[#00504F] rounded-r-2xl h-10 p-2 absolute top-0">
                         <span aria-current="page" class="text-white whitespace-nowrap overflow-hidden">{$currentTitle|escape}</span>
                     </div>

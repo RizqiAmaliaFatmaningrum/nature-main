@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-13 09:38:33
+/* Smarty version 4.3.1, created on 2023-12-26 01:58:49
   from 'app:frontendobjectsissue_summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65796d898376c6_42848061',
+  'unifunc' => 'content_658a2549b5ce92_38640624',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86c3c6d3b8626fd94695da222063914b868c2845' => 
     array (
       0 => 'app:frontendobjectsissue_summary.tpl',
-      1 => 1702435285,
+      1 => 1703552110,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65796d898376c6_42848061 (Smarty_Internal_Template $_smarty_tpl) {
+function content_658a2549b5ce92_38640624 (Smarty_Internal_Template $_smarty_tpl) {
 ?> 
   <?php $_smarty_tpl->_assignInScope('issueTitle', $_smarty_tpl->tpl_vars['issue']->value->getLocalizedTitle());?>
  <?php $_smarty_tpl->_assignInScope('issueSeries', $_smarty_tpl->tpl_vars['issue']->value->getIssueSeries());?>

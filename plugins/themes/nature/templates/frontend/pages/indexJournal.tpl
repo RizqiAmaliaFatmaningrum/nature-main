@@ -17,8 +17,8 @@
  * @uses $issue Issue Current issue
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
-
-<div class="relative page_index_journal">
+{* <div class="bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6 relative"> *}
+<div class="page_index_journal">
 
 	{call_hook name="Templates::Index::journal"}
 
@@ -92,61 +92,78 @@
 	{/if}
 
 	{* Latest issue *}
-	<div class="flex">
-		<div class="flex-2 bg-[#00504F] text-white rounded-3xl p-2 m-2 shadow-lg">
-			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
-			{if $issueCover}
-				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
-					{capture assign="defaultAltText"}
-						{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
-					{/capture}
-					<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}" class="w-64 h-auto rounded-3xl">
-				</a>
-			{/if}
-		</div>
-		<div class="flex-1 bg-[#00504F] text-white rounded-3xl p-10 m-4 shadow-lg">
-			{if $issue}
-				<section class="current_issue">
-					<a id="homepageIssue"></a>
-					<p class="font-bold text-2xl mt-0">
-						{translate key="journal.currentIssue"}
-					</p>
-					<div class="current_issue_title">
-						{$issue->getIssueIdentification()|strip_unsafe_html}
-					</div>
+	<div class="lg:flex">
+			<div class="hidden m-2 lg:block">
+				{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+				{if $issueCover}
+					<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
+						{capture assign="defaultAltText"}
+							{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
+						{/capture}
+						<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}" class=" rounded-3xl ">
+					</a>
+				{/if}
+			</div>
 
-					{* Description *}
-					{if $issue->hasDescription()}
-						<div class="description  text-justify pb-6">
-							{$issue->getLocalizedDescription()|strip_unsafe_html}
+			<div class="flex-1 m-2 lg:hidden">
+				{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+				{if $issueCover}
+					<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
+						{capture assign="defaultAltText"}
+							{translate key="issue.viewIssueIdentification" identification=$issue->getIssueIdentification()|escape}
+						{/capture}
+						<img src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:$defaultAltText}" class="w-64 h-auto rounded-3xl ">
+					</a>
+				{/if}
+			</div>
+			<div class="bg-[#00504F] text-white rounded-3xl p-10 m-2 shadow-lg">
+				{if $issue}
+					<section class="current_issue">
+						<a id="homepageIssue"></a>
+						<p class="font-bold text-2xl mt-0">
+							{translate key="journal.currentIssue"}
+						</p>
+						<div class="current_issue_title">
+							{$issue->getIssueIdentification()|strip_unsafe_html}
 						</div>
-					{/if}
 
-					{* Published date *}
-					{if $issue->getDatePublished()}
-						<div class="published">
-							{* <span class="label">
-								{translate key="submissions.published"}:
-							</span> *}
-							<button class="bg-[#006A68] text-[#FF8E06] font-bold py-2 px-4 rounded-3xl">
-								<span class="label">
-									{translate key="submissions.published"}:
-								</span>
-								<span class="value">
-									{$issue->getDatePublished()|date_format:$dateFormatShort}
-								</span>
-							</button>
-							<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl">
-								<a href="https://openjournaltheme.com/novelty-ojs3-theme" target="_blank" rel="noopener">Read More</a>
-							</button>
-							{* <span class="value">
-								{$issue->getDatePublished()|date_format:$dateFormatShort}
-							</span> *}
-						</div>
-					{/if}
-				</section>
-			{/if}
+						{* Description *}
+						{if $issue->hasDescription()}
+							<div class="description  text-justify pb-6">
+								{$issue->getLocalizedDescription()|strip_unsafe_html}
+							</div>
+						{/if}
+
+						{* Published date *}
+						{if $issue->getDatePublished()}
+							<div class="justify-end md:flex ">
+								<div class="published">
+									{* <span class="label">
+										{translate key="submissions.published"}:
+									</span> *}
+									<button class="bg-[#006A68] text-[#FF8E06] font-bold py-2 px-4 rounded-3xl">
+										<span class="label">
+											{translate key="submissions.published"}:
+										</span>
+										<span class="value">
+											{$issue->getDatePublished()|date_format:$dateFormatShort}
+										</span>
+									</button>
+									
+									{* <span class="value">
+										{$issue->getDatePublished()|date_format:$dateFormatShort}
+									</span> *}
+								</div>
+								<button class="flex my-2 md:my-0 md:mx-2 bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl">
+									<a href="https://openjournaltheme.com/novelty-ojs3-theme" target="_blank" rel="noopener">Read More</a>
+								</button>
+							</div>
+						{/if}
+					</section>
+				{/if}
+			</div>
 		</div>
+		
 	</div>
 	{* Show issue toc *}
 	{include file="frontend/objects/issue_toc.tpl" heading="h3"}
@@ -162,5 +179,6 @@
 		</div>
 	{/if} *}
 </div><!-- .page -->
-
+{* </div> *}
+{* {include file="frontend/objects/issue_toc.tpl" heading="h3"} *}
 {include file="frontend/components/footer.tpl"}

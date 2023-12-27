@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-12 04:53:01
+/* Smarty version 4.3.1, created on 2023-12-19 03:06:50
   from 'app:frontendpageseditorialTeam.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6577d91d54cbb9_20124030',
+  'unifunc' => 'content_6580faba1f9809_51110878',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '63c3703926f6cd217d548df875d7e1620d1ef19f' => 
     array (
       0 => 'app:frontendpageseditorialTeam.tpl',
-      1 => 1702353179,
+      1 => 1702538662,
       2 => 'app',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6577d91d54cbb9_20124030 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6580faba1f9809_51110878 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"about.editorialTeam"), 0, false);
 ?>
 

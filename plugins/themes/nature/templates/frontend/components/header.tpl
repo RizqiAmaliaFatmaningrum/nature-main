@@ -26,16 +26,14 @@
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
 
-<body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if
-    $showingLogo} has_site_logo{/if}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
+<body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
     <span class="hidden">Nature OJS 3 Theme by openjournaltheme.com theme</span>
-    {* maintenance *}
+
     {if $isMaintenanceMode}
     <div id="maintenance_container">
         <!-- Other elements here -->
         <div id="maintenance_content" style="text-align:center; color: #DBB539; padding: 5px 0">
-            <i class="fa fa-wrench mr-3"> </i> <a href="https://openjournaltheme.com"
-                style="color: #DBB539; padding: 5px 0">Site is in maintenance mode</a>
+            <i class="fa fa-wrench mr-3"> </i> <a href="https://openjournaltheme.com" style="color: #DBB539; padding: 5px 0"> Site is in maintenance mode</a>			
         </div>
     </div>
     {/if}
@@ -44,10 +42,10 @@
 
         {* Header *}
         <header class="bg-white" id="headerNavigationContainer" role="banner">
-            <button class="pkp_site_nav_toggle">
+            {* <button class="pkp_site_nav_toggle">
                 <span>Open Menu</span>
-            </button>
-            {if !$requestedPage || $requestedPage === 'index'}
+            </button> *}
+            {* {if !$requestedPage || $requestedPage === 'index'}
             <h1 class="pkp_screen_reader">
                 {if $currentContext}
                 {$displayPageHeaderTitle|escape}
@@ -55,34 +53,26 @@
                 {$siteTitle|escape}
                 {/if}
             </h1>
-            {/if}
+            {/if} *}
             {capture assign="homeUrl"}
             {url page="index" router=$smarty.const.ROUTE_PAGE}
             {/capture}
 
             <div class="container mx-auto">
                 <div class="p-5 bg-[#F4FEFD] shadow xl:flex xl:items-center xl:justify-between">
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between">
                         <span class="text-2xl font-bold text-dark hover:text-[#00504F] cursor-pointer">
-                            <img class="h-10 inline" src="">
+                            {* <img class="h-10 inline" src=""> *}
                             <a href="{$homeUrl}" class="is_text">{$displayPageHeaderTitle|escape}</a>
                         </span>
-
-                        {* <div class="flex items-center px-4">
-                            <button id="hamburger" name="hamburger" type="button" class="block right-4 xl:hidden">
-                                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                                <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                                <span
-                                    class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-                            </button>
-                        </div> *}
-                        <button id="hamburger">
+        
+                        <button id="hamburger" >
                             <span class="text-3xl cursor-pointer mx-2 xl:hidden block">
                                 <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
                             </span>
                         </button>
                     </div>
-
+                    
                     {capture assign="primaryMenu"}
                     {load_menu name="primary" id="main-navigation" ulClass="nav navbar-nav"}
                     {/capture}
@@ -121,41 +111,18 @@
                 </a>
                 {/if}
 
-                <div class="bg-[#00504F] text-white py-10 px-40 z-10">
+                <div class="bg-[#00504F] text-white lg:py-10 lg:px-40 z-10 py-10 px-20">
                     <h3 class="text-3xl font-bold mb-3">About Juornal</h3>
                     {if $journalDescription}
                     <div class="text-justify">
                         {$journalDescription}
                     </div>
                     {/if}
-                    {* <p>In recent years, artificial intelligence (AI) has emerged as a transformative force, reshaping
-                        the landscape of various industries and aspects of our daily lives. The rapid advancements in
-                        machine learning axlorithms and computational power have propelled AI into the forefront of
-                        technological innovation. From virtual personal assistants and recommendation systems to complex
-                        autonomous vehicles and medical diagnostics, AI applications continue to evolve, offering
-                        unprecedented possibilities. However, with the promise of efficiency and convenience comes a set
-                        of ethical considerations and challenges. As we navigate this era of AI integration, striking a
-                        balance between innovation and responsible AI development becomes paramount, ensuring that the
-                        benefits of artificial intelligence are harnessed while mitigating potential risks and ethical
-                        dilemmas.</p> *}
                 </div>
                 {* <div class="bg-[#F4FEFD] ">
                     <div class=" rounded-3xl p-10">
                         <div class="flex">
-                            <div class="w-30 h-20 bg-[#DAE4E3] rounded-3xl flex p-4 m-2">
-                                <p class="text-lg m-auto color-[#00504F] font-bold">Sumbit Your Paper</p>
-                                <div class="w-10 h-10 bg-[#00504F] rounded-full flex ">
-                                    <button href="#" class="text-lg m-auto">➕</button>
-                                </div>
-                            </div>
-                            <div class="flex-1 bg-[#DAE4E3] rounded-3xl p-4 m-2">
-                                <p>current issues</p>
-                            </div>
                             <div class="flex-initial w-64 bg-[#F4FEFD] rounded-3xl p-4 m-2">
-                                <div class="h-auto md:8/12 bg-[#DAE4E3] p-5 rounded-2xl">
-                                    <button
-                                        class="w-28 h-full bg-[#00504F] flex justify-center item-center rounded-2xl">🔍</button>
-                                </div>
                                 <div class=" md:grid-cols-1">
                                     <div class="w-30 bg-[#DAE4E3] rounded-3xl p-4 m-2">
                                         {if $onlineIssn}
@@ -221,7 +188,5 @@
 
         <div class="lg:flex bg-[#F4FEFD] rounded-t-3xl pkp_structure_content container">
 
-            <aside id="left" class="lg:w-1/4 xl:w-1/4 m-2 col-md-3">
-            </aside>
-            <main class="lg:w-1/2 xl:w-1/2 bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6"
-                role="main">
+        <aside id="left" class="lg:w-1/4 xl:w-1/4 m-2 col-md-3"></aside>
+        <main class="lg:w-1/2 xl:w-1/2 bg-[#DAE4E3] rounded-3xl p-4 m-2 col-xs-12 col-sm-10 col-md-6 relative" role="main">

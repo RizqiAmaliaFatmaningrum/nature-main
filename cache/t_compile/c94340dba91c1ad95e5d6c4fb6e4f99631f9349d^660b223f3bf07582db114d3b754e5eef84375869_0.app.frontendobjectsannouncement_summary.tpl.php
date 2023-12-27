@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-12 07:18:34
+/* Smarty version 4.3.1, created on 2023-12-16 03:40:01
   from 'app:frontendobjectsannouncement_summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6577fb3af40cc7_24256345',
+  'unifunc' => 'content_657d0e01a6edb5_95218129',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '660b223f3bf07582db114d3b754e5eef84375869' => 
     array (
       0 => 'app:frontendobjectsannouncement_summary.tpl',
-      1 => 1702260050,
+      1 => 1702538662,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6577fb3af40cc7_24256345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657d0e01a6edb5_95218129 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 

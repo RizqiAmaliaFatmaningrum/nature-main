@@ -118,22 +118,48 @@
 				</div>
 			{/if}
 			
-			<ul class="cmp_article_list articles">
-				<div class="grid grid-cols-2 gap-2">
-					{foreach from=$section.articles item=article}
-						<li>
-						<div class="justify-center w-50 bg-white rounded-3xl p-4 m-2 shadow-lg">
-							{include file="frontend/objects/article_summary.tpl" heading=$articleHeading}
-						</div>
-						<div>
-						</div>
-						</li>
-					{/foreach}
-				</div>
-			</ul>
 			
+				<div class="cmp_article_list articles">
+					{* <div class="grid grid-cols-2 gap-2"> *}
+						{foreach from=$section.articles item=article}
+							<div class="flex items-center">
+									{if !$hideGalleys}
+										<ul class="galleys_links flex space-x-2">
+											{foreach from=$article->getGalleys() item=galley}
+												{if $primaryGenreIds}
+													{assign var="file" value=$galley->getFile()}
+													{if !$galley->getRemoteUrl() && !($file && in_array($file->getGenreId(), $primaryGenreIds))}
+														{continue}
+													{/if}
+												{/if}
+												<li>
+													{assign var="hasArticleAccess" value=$hasAccess}
+													{if $currentContext->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_OPEN || $publication->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN}
+														{assign var="hasArticleAccess" value=1}
+													{/if}
+													{include file="frontend/objects/galley_link.tpl" parent=$article labelledBy="article-{$article->getId()}" hasAccess=$hasArticleAccess purchaseFee=$currentJournal->getData('purchaseArticleFee') purchaseCurrency=$currentJournal->getData('currency')}
+												</li>
+											{/foreach}
+										</ul>
+									{/if}
+									
+									{call_hook name="Templates::Issue::Issue::Article"}
+							
+								{* <div > *}
+								<div class="w-4/5 right-0 bg-white rounded-3xl p-4 m-2 shadow-lg">
+									{include file="frontend/objects/article_summary.tpl" heading=$articleHeading}
+								</div>
+								{* </div> *}
+								
+							</div>
+						{/foreach}
+						
+					{* </div> *}
+				</div>
 		{/if}
 	{/foreach}
+
+	
 	</div><!-- .sections -->
 
 </div>
