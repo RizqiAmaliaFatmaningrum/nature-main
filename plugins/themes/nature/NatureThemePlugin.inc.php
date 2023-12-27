@@ -219,7 +219,7 @@ class NatureThemePlugin extends ThemePlugin
 		$this->addMenuArea(array('primary', 'user'));
 		$this->addStyle('tailwind', '/public/css/style.css');
 
-		$this->addStyle('noveltyLess', 'styles/nature.less', ['baseUrl' => $this->_getBaseUrl()]);
+		// $this->addStyle('natureLess', 'styles/nature.less', ['baseUrl' => $this->_getBaseUrl()]);
 	}
 
 	/**

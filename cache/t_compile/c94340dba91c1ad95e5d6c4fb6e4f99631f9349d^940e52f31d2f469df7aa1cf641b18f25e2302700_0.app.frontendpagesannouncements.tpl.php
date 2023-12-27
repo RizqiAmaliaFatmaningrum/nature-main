@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-13 02:58:00
+/* Smarty version 4.3.1, created on 2023-12-16 03:40:01
   from 'app:frontendpagesannouncements.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65790fa8bca782_36645938',
+  'unifunc' => 'content_657d0e01076fe0_97929400',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '940e52f31d2f469df7aa1cf641b18f25e2302700' => 
     array (
       0 => 'app:frontendpagesannouncements.tpl',
-      1 => 1702428492,
+      1 => 1702538662,
       2 => 'app',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65790fa8bca782_36645938 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657d0e01076fe0_97929400 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"announcement.announcements"), 0, false);
 ?>
 

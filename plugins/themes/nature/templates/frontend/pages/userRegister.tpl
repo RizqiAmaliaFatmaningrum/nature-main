@@ -11,12 +11,10 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="user.register"}
 
-<div class="page page_register">
-	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.register"}
-	<h1>
-		{translate key="user.register"}
-	</h1>
+<div id="main-content" class="page page_register">
 
+	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.register"}
+	
 	<form class="cmp_form register" id="register" method="post" action="{url op="register"}">
 		{csrf}
 
@@ -151,12 +149,19 @@
 		{/if}
 
 		<div class="buttons">
-			<button class="submit" type="submit">
-				{translate key="user.register"}
-			</button>
 
-			{capture assign="rolesProfileUrl"}{url page="user" op="profile" path="roles"}{/capture}
-			<a href="{url page="login" source=$rolesProfileUrl}" class="login">{translate key="user.login"}</a>
+			<div class="my-3 grid-cols-2">
+				<button class="submit text-white bg-[#006A68] font-bold py-2 px-4 rounded-3xl mb-3" type="submit">
+					{translate key="user.register"}
+				</button>
+						
+				<button class="bg-[#FF8E06] text-white font-bold py-2 px-4 rounded-3xl" type="submit">
+					{capture assign="rolesProfileUrl"}{url page="user" op="profile" path="roles"}{/capture}
+					<a href="{url page="login" source=$rolesProfileUrl}" class="login">{translate key="user.login"}</a>
+				</button>
+			</div>
+
+			
 		</div>
 	</form>
 

@@ -1,28 +1,27 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-12 04:37:07
+/* Smarty version 4.3.1, created on 2023-12-22 01:41:40
   from 'app:frontendobjectsarticle_summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6577d563588711_19076045',
+  'unifunc' => 'content_6584db44e86be0_80672913',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7cf1cd52b8ba8108de77f197078de34b733dd394' => 
     array (
       0 => 'app:frontendobjectsarticle_summary.tpl',
-      1 => 1702340970,
+      1 => 1703205151,
       2 => 'app',
     ),
   ),
   'includes' => 
   array (
-    'app:frontend/objects/galley_link.tpl' => 1,
   ),
 ),false)) {
-function content_6577d563588711_19076045 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),1=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
+function content_6584db44e86be0_80672913 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\openjournal\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_assignInScope('articlePath', $_smarty_tpl->tpl_vars['article']->value->getBestId());
 if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('heading', "h2");
@@ -34,30 +33,17 @@ if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
 
 <?php $_smarty_tpl->_assignInScope('publication', $_smarty_tpl->tpl_vars['article']->value->getCurrentPublication());?>
 <div class="">
-	<?php if ($_smarty_tpl->tpl_vars['publication']->value->getLocalizedData('coverImage')) {?>
-		<div class="cover ">
-			<a <?php if ($_smarty_tpl->tpl_vars['journal']->value) {?>href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('journal'=>$_smarty_tpl->tpl_vars['journal']->value->getPath(),'page'=>"article",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['articlePath']->value),$_smarty_tpl ) );?>
-"<?php } else { ?>href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"article",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['articlePath']->value),$_smarty_tpl ) );?>
-"<?php }?> class="file">
-				<?php $_smarty_tpl->_assignInScope('coverImage', $_smarty_tpl->tpl_vars['article']->value->getCurrentPublication()->getLocalizedData('coverImage'));?>
-				<img class="w-52 rounded-3xl"
-					src="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getCurrentPublication()->getLocalizedCoverImageUrl($_smarty_tpl->tpl_vars['article']->value->getData('contextId')) ));?>
-"
-					alt="<?php echo (($tmp = call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['coverImage']->value['altText'] )) ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
-"
-				>
-			</a>
-		</div>
-	<?php }?>
-
+	
 	<<?php echo $_smarty_tpl->tpl_vars['heading']->value;?>
  class="title">
 		<a id="article-<?php echo $_smarty_tpl->tpl_vars['article']->value->getId();?>
 " <?php if ($_smarty_tpl->tpl_vars['journal']->value) {?>href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('journal'=>$_smarty_tpl->tpl_vars['journal']->value->getPath(),'page'=>"article",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['articlePath']->value),$_smarty_tpl ) );?>
 "<?php } else { ?>href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"article",'op'=>"view",'path'=>$_smarty_tpl->tpl_vars['articlePath']->value),$_smarty_tpl ) );?>
 "<?php }?>>
+			<span class="text-2xl font-bold">
 			<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strip_unsafe_html' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getLocalizedTitle() ));?>
 
+			</span>
 			<?php if ($_smarty_tpl->tpl_vars['article']->value->getLocalizedSubtitle()) {?>
 				<span class="subtitle">
 					<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getLocalizedSubtitle() ));?>
@@ -73,7 +59,7 @@ if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
         <?php if ($_smarty_tpl->tpl_vars['showAuthor']->value && !$_smarty_tpl->tpl_vars['activeTheme']->value->getOption('author_affiliation')) {?>
           <div class="meta">
             <?php if ($_smarty_tpl->tpl_vars['showAuthor']->value) {?>
-              <div class="authors ">
+              <div class="authors font-bold text-[#006A68] border-2 border-[#006A68] rounded-3xl px-4 mb-2">
                 <?php echo smarty_modifier_truncate(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value->getAuthorString() )),100);?>
 
               </div>
@@ -82,28 +68,26 @@ if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
         <?php }?>
         <?php if ($_smarty_tpl->tpl_vars['showAuthor']->value && $_smarty_tpl->tpl_vars['activeTheme']->value->getOption('author_affiliation') && $_smarty_tpl->tpl_vars['publication']->value->getData('authors')) {?>
 			<div class="author">
-				<span class="flex items-center authors">
+				<span class="flex items-center authors ">
 					<svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512" class="h-4 w-5">
 						<path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"/>
 					</svg>
-					<i class="fas fa-users fa-fw mr-1" aria-hidden="true"></i>
-					<?php
+										<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['publication']->value->getData('authors'), 'author');
 $_smarty_tpl->tpl_vars['author']->iteration = 0;
 $_smarty_tpl->tpl_vars['author']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['author']->value) {
 $_smarty_tpl->tpl_vars['author']->do_else = false;
 $_smarty_tpl->tpl_vars['author']->iteration++;
-$__foreach_author_4_saved = $_smarty_tpl->tpl_vars['author'];
+$__foreach_author_0_saved = $_smarty_tpl->tpl_vars['author'];
 ?>
+						
 						<a class="text-decoration-none" href="<?php echo $_smarty_tpl->tpl_vars['journalUrl']->value;?>
 search?authors=<?php echo $_smarty_tpl->tpl_vars['author']->value->getFullName();?>
 "><?php echo $_smarty_tpl->tpl_vars['author']->value->getFullName();?>
 </a>
-						<sup class="mr-1">(<?php echo $_smarty_tpl->tpl_vars['author']->iteration;?>
-)</sup><?php if ($_smarty_tpl->tpl_vars['author']->iteration !== smarty_modifier_count($_smarty_tpl->tpl_vars['publication']->value->getData('authors'))) {?>,<?php }?>
-					<?php
-$_smarty_tpl->tpl_vars['author'] = $__foreach_author_4_saved;
+											<?php
+$_smarty_tpl->tpl_vars['author'] = $__foreach_author_0_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</span>
@@ -120,7 +104,7 @@ $_smarty_tpl->tpl_vars['author']->do_else = false;
 $_smarty_tpl->tpl_vars['author']->iteration++;
 $_smarty_tpl->tpl_vars['__smarty_foreach_authors']->value['iteration']++;
 $_smarty_tpl->tpl_vars['__smarty_foreach_authors']->value['last'] = $_smarty_tpl->tpl_vars['__smarty_foreach_authors']->value['iteration'] === $_smarty_tpl->tpl_vars['__smarty_foreach_authors']->value['total'];
-$__foreach_author_5_saved = $_smarty_tpl->tpl_vars['author'];
+$__foreach_author_1_saved = $_smarty_tpl->tpl_vars['author'];
 ?>
 				<div class="italic text-sm text-gray-600">
 					(<?php echo $_smarty_tpl->tpl_vars['author']->iteration;?>
@@ -136,7 +120,7 @@ $__foreach_author_5_saved = $_smarty_tpl->tpl_vars['author'];
 if (!(isset($_smarty_tpl->tpl_vars['__smarty_foreach_authors']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_authors']->value['last'] : null)) {?><span>,</span><?php }?>
 				</div>
 				<?php
-$_smarty_tpl->tpl_vars['author'] = $__foreach_author_5_saved;
+$_smarty_tpl->tpl_vars['author'] = $__foreach_author_1_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</div>
@@ -236,37 +220,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 	
 				
-	<?php if (!$_smarty_tpl->tpl_vars['hideGalleys']->value) {?>
-		<ul class="galleys_links">
-			<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['article']->value->getGalleys(), 'galley');
-$_smarty_tpl->tpl_vars['galley']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['galley']->value) {
-$_smarty_tpl->tpl_vars['galley']->do_else = false;
-?>
-				<?php if ($_smarty_tpl->tpl_vars['primaryGenreIds']->value) {?>
-					<?php $_smarty_tpl->_assignInScope('file', $_smarty_tpl->tpl_vars['galley']->value->getFile());?>
-					<?php if (!$_smarty_tpl->tpl_vars['galley']->value->getRemoteUrl() && !($_smarty_tpl->tpl_vars['file']->value && in_array($_smarty_tpl->tpl_vars['file']->value->getGenreId(),$_smarty_tpl->tpl_vars['primaryGenreIds']->value))) {?>
-						<?php continue 1;?>
-					<?php }?>
-				<?php }?>
-				<li>
-					<?php $_smarty_tpl->_assignInScope('hasArticleAccess', $_smarty_tpl->tpl_vars['hasAccess']->value);?>
-					<?php if ($_smarty_tpl->tpl_vars['currentContext']->value->getSetting('publishingMode') == (defined('PUBLISHING_MODE_OPEN') ? constant('PUBLISHING_MODE_OPEN') : null) || $_smarty_tpl->tpl_vars['publication']->value->getData('accessStatus') == (defined('ARTICLE_ACCESS_OPEN') ? constant('ARTICLE_ACCESS_OPEN') : null)) {?>
-						<?php $_smarty_tpl->_assignInScope('hasArticleAccess', 1);?>
-					<?php }?>
-					<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/galley_link.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('parent'=>$_smarty_tpl->tpl_vars['article']->value,'labelledBy'=>"article-".((string)$_smarty_tpl->tpl_vars['article']->value->getId()),'hasAccess'=>$_smarty_tpl->tpl_vars['hasArticleAccess']->value,'purchaseFee'=>$_smarty_tpl->tpl_vars['currentJournal']->value->getData('purchaseArticleFee'),'purchaseCurrency'=>$_smarty_tpl->tpl_vars['currentJournal']->value->getData('currency')), 0, true);
-?>
-				</li>
-			<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-		</ul>
-	<?php }?>
-
-	<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['call_hook'][0], array( array('name'=>"Templates::Issue::Issue::Article"),$_smarty_tpl ) );?>
-
-</div>
+	</div>
 
 
 <?php }

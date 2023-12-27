@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-12 07:11:22
+/* Smarty version 4.3.1, created on 2023-12-15 03:07:01
   from 'plugins-1-plugins-generic-ojtPlugin-generic-ojtPlugin:plugingallery.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6577f98a5d4cf0_92460869',
+  'unifunc' => 'content_657bb4c5f268f0_27626652',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6577f98a5d4cf0_92460869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657bb4c5f268f0_27626652 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div x-data="pluginGallery()" id="pluginGallery">
   <div x-show="loading && !error">
     <div class="loading-menu ojt-flex ojt-items-center ojt-h-50">

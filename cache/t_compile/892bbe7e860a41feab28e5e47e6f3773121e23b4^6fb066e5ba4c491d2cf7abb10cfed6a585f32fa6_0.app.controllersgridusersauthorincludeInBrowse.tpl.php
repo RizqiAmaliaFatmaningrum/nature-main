@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-11 08:37:33
+/* Smarty version 4.3.1, created on 2023-12-16 03:31:26
   from 'app:controllersgridusersauthorincludeInBrowse.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6576bc3d7485d2_06533395',
+  'unifunc' => 'content_657d0bfeeb7c22_99856262',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6576bc3d7485d2_06533395 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657d0bfeeb7c22_99856262 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['includeInBrowse']->value) {?>
 	<div id="isChecked"><div href="#" class='pkp_helpers_container_center checked'></div></div>
 <?php }?>

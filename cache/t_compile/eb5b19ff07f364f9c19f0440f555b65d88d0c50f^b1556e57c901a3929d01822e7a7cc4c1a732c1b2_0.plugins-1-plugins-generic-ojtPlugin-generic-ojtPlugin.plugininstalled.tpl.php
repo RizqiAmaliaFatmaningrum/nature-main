@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-12 07:11:22
+/* Smarty version 4.3.1, created on 2023-12-15 03:07:02
   from 'plugins-1-plugins-generic-ojtPlugin-generic-ojtPlugin:plugininstalled.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6577f98a62ab66_61334116',
+  'unifunc' => 'content_657bb4c6080bc5_83755837',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6577f98a62ab66_61334116 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657bb4c6080bc5_83755837 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="pluginInstalled" x-data="pluginInstalled()" x-init="init()" class="ojt-p-4">
   <div x-show="$store.plugins.isLoading">
     <div class="loading-menu ojt-flex ojt-items-center ojt-h-80">

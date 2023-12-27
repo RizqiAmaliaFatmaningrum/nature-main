@@ -21,7 +21,7 @@
 	{* Display a message if no current issue exists *}
 	{if !$issue}
 		{include file="frontend/components/breadcrumbs_issue.tpl" currentTitleKey="current.noCurrentIssue"}
-		<h1>
+		<h1 class="font-bold">
 			{translate key="current.noCurrentIssue"}
 		</h1>
 		{include file="frontend/components/notification.tpl" type="warning" messageKey="current.noCurrentIssueDesc"}
@@ -29,9 +29,10 @@
 	{* Display an issue with the Table of Contents *}
 	{else}
 		{include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
-		<h1>
+		<p class="text-lg font-bold">
 			{$issueIdentification|escape}
-		</h1>
+		</p>
+		<hr class="my-5 w-full border-t-2 border-[#00504F]">
 		{include file="frontend/objects/issue_toc.tpl"}
 	{/if}
 </div>

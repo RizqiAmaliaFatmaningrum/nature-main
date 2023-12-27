@@ -14,17 +14,29 @@
 
 </main><!-- pkp_structure_main -->
 
+{assign var="onlineIssn" value=$currentJournal->getSetting('onlineIssn')}
+{assign var="printIssn" value=$currentJournal->getSetting('printIssn')}
 
 {* Sidebars *}
 {if empty($isFullWidth)}
 	{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 	{if $sidebarCode}
 		<aside id="right" class="lg:w-1/4 xl:w-1/4 pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
-		
+		{* <div class="font-bold text-[#00504F]">
+		<div class="w-30 bg-[#DAE4E3] rounded-3xl p-4 m-2">
+            {if $onlineIssn}
+                <a href="https://portal.issn.org/resource/issn/{$onlineIssn}"><span
+                 class="issn">Online ISSN : {$onlineIssn}</span></a>
+			{/if}
+        </div>
+        <div class="w-30 bg-[#DAE4E3] rounded-3xl  p-4 m-2">
+        	{if $printIssn}
+                <a href="https://portal.issn.org/resource/issn/{$printIssn}"><span
+                    class="issn">Print ISSN : {$printIssn}</span></a>
+             {/if}
+        </div>
+		</div> *}
 		{* {include file="frontend/pages/userLogin.tpl"} *}
-
-		{$sidebarCode}
-
 		{* Additional Homepage Content additional_content*}
 		{if $additionalHomeContent}
 			<div class="">
@@ -33,6 +45,10 @@
 				{* </div> *}
 			</div>
 		{/if}
+		
+		{$sidebarCode}
+
+		
 		</aside><!-- pkp_sidebar.left -->
 	{/if}
 {/if}
@@ -41,48 +57,9 @@
 	<footer class="footer" role="contentinfo">
 
 		<div class="container mx-auto rounded-t-3xl bg-[#002020] text-white">
-			{* <div class="pkp_structure_footer_wrapper" role="contentinfo"> *}
-
-			{* <p class="flex space-x-6">
-				<a href="https://www.facebook.com/sharer.php?u=https://demo.openjournaltheme.com/index.php/novelty/"
-				target="_blank"
-				rel="noopener"
-				class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-					<em class="fa fa-facebook"></em>
-				</a>
-
-				<a href="https://telegram.me/share/url?url=https://demo.openjournaltheme.com/index.php/novelty/"
-				target="_blank"
-				rel="noopener"
-				class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-					<em class="fa fa-telegram"></em>
-				</a>
-
-				<a href="https://api.whatsapp.com/send?text=https://demo.openjournaltheme.com/index.php/novelty/"
-				target="_blank"
-				rel="noopener"
-				class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-					<em class="fa fa-whatsapp "></em>
-				</a>
-
-				<a href="https://twitter.com/intent/tweet?url=https://demo.openjournaltheme.com/index.php/novelty/"
-				target="_blank"
-				rel="noopener"
-				class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-					<em class="fa fa-twitter"></em>
-				</a>
-
-				<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://demo.openjournaltheme.com/index.php/novelty/"
-				target="_blank"
-				rel="noopener"
-				class="bg-[#006A68] text-white inline-block mr-6 py-2 px-4 border-2 border-solid border-[#705a83] rounded-full">
-					<em class="fa fa-linkedin"></em>
-				</a>
-			</p> *}
-
 				<div class="row">
 					{if $pageFooter}
-						<div class="pkp_footer_content">
+						<div class="col-span-12">
 							{$pageFooter}
 						</div>
 					{/if}
@@ -96,12 +73,11 @@
 			{* </div><!-- pkp_structure_footer_wrapper --> *}
 
 		</div>
-	
+
 	</footer>
 </div><!-- pkp_structure_page -->
 
 {load_script context="frontend"}
-
 {call_hook name="Templates::Common::Footer::PageFooter"}
 
 

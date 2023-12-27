@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-28 03:51:36
+/* Smarty version 4.3.1, created on 2023-12-15 02:37:37
   from 'app:dashboardindex.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656555b8e8e5b6_31131399',
+  'unifunc' => 'content_657bade13e5cb7_91982632',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_656555b8e8e5b6_31131399 (Smarty_Internal_Template $_smarty_tpl) {
+function content_657bade13e5cb7_91982632 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1872070889656555b8e7fba4_78836567', "page");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2023602192657bade13d76e0_96811898', "page");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layouts/backend.tpl");
 }
 /* {block "page"} */
-class Block_1872070889656555b8e7fba4_78836567 extends Smarty_Internal_Block
+class Block_2023602192657bade13d76e0_96811898 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'page' => 
   array (
-    0 => 'Block_1872070889656555b8e7fba4_78836567',
+    0 => 'Block_2023602192657bade13d76e0_96811898',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

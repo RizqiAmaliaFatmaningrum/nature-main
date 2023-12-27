@@ -1,29 +1,29 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-04 08:41:43
+/* Smarty version 4.3.1, created on 2023-12-22 01:23:36
   from 'app:frontendobjectsissue_toc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_656d82b71eb597_59870939',
+  'unifunc' => 'content_6584d708f26de2_68512969',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26de9c47ced54328a8eb56e39bb4d4079aa049c6' => 
     array (
       0 => 'app:frontendobjectsissue_toc.tpl',
-      1 => 1701507104,
+      1 => 1703204557,
       2 => 'app',
     ),
   ),
   'includes' => 
   array (
     'app:frontend/components/notification.tpl' => 1,
-    'app:frontend/objects/galley_link.tpl' => 1,
+    'app:frontend/objects/galley_link.tpl' => 2,
     'app:frontend/objects/article_summary.tpl' => 1,
   ),
 ),false)) {
-function content_656d82b71eb597_59870939 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6584d708f26de2_68512969 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['heading']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('heading', "h2");
 }
@@ -125,32 +125,63 @@ $_smarty_tpl->tpl_vars['section']->do_else = false;
 												</div>
 			<?php }?>
 			
-			<ul class="cmp_article_list articles">
-				<div class="grid grid-cols-2 gap-2">
-					<?php
+			
+				<div class="cmp_article_list articles">
+											<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['section']->value['articles'], 'article');
 $_smarty_tpl->tpl_vars['article']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['article']->value) {
 $_smarty_tpl->tpl_vars['article']->do_else = false;
 ?>
-						<li>
-						<div class="justify-center w-50 bg-white rounded-3xl p-4 m-2 shadow-lg">
-							<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('heading'=>$_smarty_tpl->tpl_vars['articleHeading']->value), 0, true);
+							<div class="flex items-center">
+									<?php if (!$_smarty_tpl->tpl_vars['hideGalleys']->value) {?>
+										<ul class="galleys_links flex space-x-2">
+											<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['article']->value->getGalleys(), 'galley');
+$_smarty_tpl->tpl_vars['galley']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['galley']->value) {
+$_smarty_tpl->tpl_vars['galley']->do_else = false;
 ?>
-						</div>
-						<div>
-						</div>
-						</li>
-					<?php
+												<?php if ($_smarty_tpl->tpl_vars['primaryGenreIds']->value) {?>
+													<?php $_smarty_tpl->_assignInScope('file', $_smarty_tpl->tpl_vars['galley']->value->getFile());?>
+													<?php if (!$_smarty_tpl->tpl_vars['galley']->value->getRemoteUrl() && !($_smarty_tpl->tpl_vars['file']->value && in_array($_smarty_tpl->tpl_vars['file']->value->getGenreId(),$_smarty_tpl->tpl_vars['primaryGenreIds']->value))) {?>
+														<?php continue 1;?>
+													<?php }?>
+												<?php }?>
+												<li>
+													<?php $_smarty_tpl->_assignInScope('hasArticleAccess', $_smarty_tpl->tpl_vars['hasAccess']->value);?>
+													<?php if ($_smarty_tpl->tpl_vars['currentContext']->value->getSetting('publishingMode') == (defined('PUBLISHING_MODE_OPEN') ? constant('PUBLISHING_MODE_OPEN') : null) || $_smarty_tpl->tpl_vars['publication']->value->getData('accessStatus') == (defined('ARTICLE_ACCESS_OPEN') ? constant('ARTICLE_ACCESS_OPEN') : null)) {?>
+														<?php $_smarty_tpl->_assignInScope('hasArticleAccess', 1);?>
+													<?php }?>
+													<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/galley_link.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('parent'=>$_smarty_tpl->tpl_vars['article']->value,'labelledBy'=>"article-".((string)$_smarty_tpl->tpl_vars['article']->value->getId()),'hasAccess'=>$_smarty_tpl->tpl_vars['hasArticleAccess']->value,'purchaseFee'=>$_smarty_tpl->tpl_vars['currentJournal']->value->getData('purchaseArticleFee'),'purchaseCurrency'=>$_smarty_tpl->tpl_vars['currentJournal']->value->getData('currency')), 0, true);
+?>
+												</li>
+											<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-				</div>
-			</ul>
-			
+										</ul>
+									<?php }?>
+									
+									<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['call_hook'][0], array( array('name'=>"Templates::Issue::Issue::Article"),$_smarty_tpl ) );?>
+
+							
+																<div class="w-4/5 right-0 bg-white rounded-3xl p-4 m-2 shadow-lg">
+									<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('heading'=>$_smarty_tpl->tpl_vars['articleHeading']->value), 0, true);
+?>
+								</div>
+																
+							</div>
+						<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+						
+									</div>
 		<?php }?>
 	<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+	
 	</div><!-- .sections -->
 
 </div>

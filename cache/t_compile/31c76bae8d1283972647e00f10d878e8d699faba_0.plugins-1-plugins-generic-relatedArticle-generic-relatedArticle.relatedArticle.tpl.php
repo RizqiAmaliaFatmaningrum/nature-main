@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-12-08 04:37:50
+/* Smarty version 4.3.1, created on 2023-12-19 03:06:24
   from 'plugins-1-plugins-generic-relatedArticle-generic-relatedArticle:relatedArticle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_65728f8e36d077_94581815',
+  'unifunc' => 'content_6580faa0257558_19880120',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65728f8e36d077_94581815 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6580faa0257558_19880120 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div>
         <h2 id="related_articles" class="animatedParent" data-sequence='300' >
         <span class="title animated fadeInUp" data-id='1'><?php echo $_smarty_tpl->tpl_vars['relatedArticleTitle']->value;?>

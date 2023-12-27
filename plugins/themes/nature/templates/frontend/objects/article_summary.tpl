@@ -26,7 +26,7 @@
 
 {assign var=publication value=$article->getCurrentPublication()}
 <div class="">
-	{if $publication->getLocalizedData('coverImage')}
+	{* {if $publication->getLocalizedData('coverImage')}
 		<div class="cover ">
 			<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if} class="file">
 				{assign var="coverImage" value=$article->getCurrentPublication()->getLocalizedData('coverImage')}
@@ -36,11 +36,13 @@
 				>
 			</a>
 		</div>
-	{/if}
+	{/if} *}
 
 	<{$heading} class="title">
 		<a id="article-{$article->getId()}" {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if}>
+			<span class="text-2xl font-bold">
 			{$article->getLocalizedTitle()|strip_unsafe_html}
+			</span>
 			{if $article->getLocalizedSubtitle()}
 				<span class="subtitle">
 					{$article->getLocalizedSubtitle()|escape}
@@ -54,7 +56,7 @@
         {if $showAuthor && !$activeTheme->getOption('author_affiliation')}
           <div class="meta">
             {if $showAuthor}
-              <div class="authors ">
+              <div class="authors font-bold text-[#006A68] border-2 border-[#006A68] rounded-3xl px-4 mb-2">
                 {$article->getAuthorString()|escape|truncate:100}
               </div>
             {/if}
@@ -62,14 +64,15 @@
         {/if}
         {if $showAuthor && $activeTheme->getOption('author_affiliation') && $publication->getData('authors')}
 			<div class="author">
-				<span class="flex items-center authors">
+				<span class="flex items-center authors ">
 					<svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512" class="h-4 w-5">
 						<path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"/>
 					</svg>
-					<i class="fas fa-users fa-fw mr-1" aria-hidden="true"></i>
+					{* <i class="fas fa-users fa-fw mr-1" aria-hidden="true"></i> *}
 					{foreach from=$publication->getData('authors') item=author}
+						
 						<a class="text-decoration-none" href="{$journalUrl}search?authors={$author->getFullName()}">{$author->getFullName()}</a>
-						<sup class="mr-1">({$author@iteration})</sup>{if $author@iteration !== $publication->getData('authors')|@count},{/if}
+						{* <sup class="mr-1">({$author@iteration})</sup>{if $author@iteration !== $publication->getData('authors')|@count},{/if} *}
 					{/foreach}
 				</span>
 				{foreach name=authors from=$publication->getData('authors') item=author}
@@ -187,7 +190,7 @@
 	</div>
 	{/if} *}
 
-	{if !$hideGalleys}
+	{* {if !$hideGalleys}
 		<ul class="galleys_links">
 			{foreach from=$article->getGalleys() item=galley}
 				{if $primaryGenreIds}
@@ -207,7 +210,7 @@
 		</ul>
 	{/if}
 
-	{call_hook name="Templates::Issue::Issue::Article"}
+	{call_hook name="Templates::Issue::Issue::Article"} *}
 </div>
 
 
